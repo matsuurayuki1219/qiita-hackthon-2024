@@ -10,7 +10,6 @@
 		D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */; };
 		D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */; };
 		D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC68102B5A23CB00EE5D38 /* ViewController.swift */; };
-		D2AC68142B5A23CC00EE5D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AC68122B5A23CC00EE5D38 /* Main.storyboard */; };
 		D2AC68162B5A23CD00EE5D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */; };
 		D2AC68192B5A23CD00EE5D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AC68172B5A23CD00EE5D38 /* LaunchScreen.storyboard */; };
 		D2AC68242B5A23CD00EE5D38 /* QiitaHackthonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC68232B5A23CD00EE5D38 /* QiitaHackthonAppTests.swift */; };
@@ -40,7 +39,6 @@
 		D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2AC68102B5A23CB00EE5D38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D2AC68132B5A23CC00EE5D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2AC68182B5A23CD00EE5D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2AC681A2B5A23CD00EE5D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */,
 				D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */,
 				D2AC68102B5A23CB00EE5D38 /* ViewController.swift */,
-				D2AC68122B5A23CC00EE5D38 /* Main.storyboard */,
 				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
 				D2AC68172B5A23CD00EE5D38 /* LaunchScreen.storyboard */,
 				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
@@ -233,7 +230,6 @@
 			files = (
 				D2AC68192B5A23CD00EE5D38 /* LaunchScreen.storyboard in Resources */,
 				D2AC68162B5A23CD00EE5D38 /* Assets.xcassets in Resources */,
-				D2AC68142B5A23CC00EE5D38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D2AC68122B5A23CC00EE5D38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2AC68132B5A23CC00EE5D38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D2AC68172B5A23CD00EE5D38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +434,6 @@
 				INFOPLIST_FILE = QiitaHackthonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -474,7 +461,6 @@
 				INFOPLIST_FILE = QiitaHackthonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
