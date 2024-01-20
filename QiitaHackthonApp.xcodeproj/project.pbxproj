@@ -195,14 +195,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		D2993FD92B5A585700B989D9 /* Recource */ = {
+		D2993FD92B5A585700B989D9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
 				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
 				D26EC0712B5BA1A300DC407B /* Localizable.strings */,
 			);
-			path = Recource;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		D2993FE12B5A64C800B989D9 /* Model */ = {
@@ -240,7 +240,7 @@
 			children = (
 				D2993FE12B5A64C800B989D9 /* Model */,
 				D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */,
-				D2993FD92B5A585700B989D9 /* Recource */,
+				D2993FD92B5A585700B989D9 /* Resource */,
 				D2993FCA2B5A543100B989D9 /* Data */,
 				D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */,
 				D2993FCE2B5A548E00B989D9 /* Presentation */,
