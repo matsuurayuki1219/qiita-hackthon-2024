@@ -198,6 +198,8 @@
 		D2993FD92B5A585700B989D9 /* Recource */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
+				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
 				D26EC0712B5BA1A300DC407B /* Localizable.strings */,
 			);
 			path = Recource;
@@ -243,9 +245,7 @@
 				D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */,
 				D2993FCE2B5A548E00B989D9 /* Presentation */,
 				D2AC68102B5A23CB00EE5D38 /* ViewController.swift */,
-				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
 				D2AC68172B5A23CD00EE5D38 /* LaunchScreen.storyboard */,
-				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
 			);
 			path = QiitaHackthonApp;
 			sourceTree = "<group>";
