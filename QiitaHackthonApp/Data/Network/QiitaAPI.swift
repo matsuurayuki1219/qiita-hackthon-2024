@@ -12,6 +12,7 @@ enum QiitaAPI {
     static func getArticles(page: Int, perPage: Int, query: String) async throws -> [QiitaArticleEntity] {
         var request = URLRequest(url: EndPoint.articles(page: page, perPage: perPage, query: query).url)
         request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
         if httpStatus.statusCode == 200 {
