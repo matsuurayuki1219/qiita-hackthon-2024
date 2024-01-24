@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D26EC0662B5B9D8300DC407B /* UIColorHexSwift */; };
+		D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */; };
+		D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26EC0712B5BA1A300DC407B /* Localizable.strings */; };
+		D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5D2B5A7E3400F012BC /* ApiError.swift */; };
+		D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */; };
+		D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */; };
+		D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */; };
+		D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */; };
+		D2993FDE2B5A63D400B989D9 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDD2B5A63D400B989D9 /* TagEntity.swift */; };
+		D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */; };
+		D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FE22B5A64E000B989D9 /* QiitaArticleModel.swift */; };
+		D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FE42B5A64F400B989D9 /* TagModel.swift */; };
+		D2993FE72B5A650800B989D9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FE62B5A650800B989D9 /* UserModel.swift */; };
+		D2993FE92B5A654100B989D9 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FE82B5A654100B989D9 /* Converter.swift */; };
+		D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */; };
+		D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */; };
 		D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */; };
 		D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */; };
 		D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC68102B5A23CB00EE5D38 /* ViewController.swift */; };
@@ -35,6 +51,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		D26EC0712B5BA1A300DC407B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D2759E5D2B5A7E3400F012BC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaRepository.swift; sourceTree = "<group>"; };
+		D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
+		D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewModel.swift; sourceTree = "<group>"; };
+		D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleEntity.swift; sourceTree = "<group>"; };
+		D2993FDD2B5A63D400B989D9 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		D2993FE22B5A64E000B989D9 /* QiitaArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleModel.swift; sourceTree = "<group>"; };
+		D2993FE42B5A64F400B989D9 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		D2993FE62B5A650800B989D9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D2993FE82B5A654100B989D9 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
 		D2AC68092B5A23CB00EE5D38 /* QiitaHackthonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaHackthonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +106,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2993FCA2B5A543100B989D9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FE82B5A654100B989D9 /* Converter.swift */,
+				D2993FD62B5A55A800B989D9 /* Storage */,
+				D2993FCC2B5A544900B989D9 /* Repository */,
+				D2993FCB2B5A544100B989D9 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D2993FCB2B5A544100B989D9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D2759E5D2B5A7E3400F012BC /* ApiError.swift */,
+				D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */,
+				D2993FCD2B5A545200B989D9 /* Entity */,
+				D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D2993FCC2B5A544900B989D9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D2993FCD2B5A545200B989D9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */,
+				D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */,
+				D2993FDD2B5A63D400B989D9 /* TagEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D2993FCE2B5A548E00B989D9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FD42B5A54D700B989D9 /* Utility */,
+				D2993FCF2B5A549C00B989D9 /* QiitaArticle */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D2993FCF2B5A549C00B989D9 /* QiitaArticle */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */,
+				D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */,
+			);
+			path = QiitaArticle;
+			sourceTree = "<group>";
+		};
+		D2993FD42B5A54D700B989D9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FD52B5A54EA00B989D9 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		D2993FD52B5A54EA00B989D9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D2993FD62B5A55A800B989D9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FD72B5A55B000B989D9 /* Entity */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D2993FD72B5A55B000B989D9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D2993FD92B5A585700B989D9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
+				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
+				D26EC0712B5BA1A300DC407B /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D2993FE12B5A64C800B989D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2993FE22B5A64E000B989D9 /* QiitaArticleModel.swift */,
+				D2993FE62B5A650800B989D9 /* UserModel.swift */,
+				D2993FE42B5A64F400B989D9 /* TagModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D2AC68002B5A23CB00EE5D38 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +238,14 @@
 		D2AC680B2B5A23CB00EE5D38 /* QiitaHackthonApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2993FE12B5A64C800B989D9 /* Model */,
 				D2AC680C2B5A23CB00EE5D38 /* AppDelegate.swift */,
+				D2993FD92B5A585700B989D9 /* Resource */,
+				D2993FCA2B5A543100B989D9 /* Data */,
 				D2AC680E2B5A23CB00EE5D38 /* SceneDelegate.swift */,
+				D2993FCE2B5A548E00B989D9 /* Presentation */,
 				D2AC68102B5A23CB00EE5D38 /* ViewController.swift */,
-				D2AC68152B5A23CD00EE5D38 /* Assets.xcassets */,
 				D2AC68172B5A23CD00EE5D38 /* LaunchScreen.storyboard */,
-				D2AC681A2B5A23CD00EE5D38 /* Info.plist */,
 			);
 			path = QiitaHackthonApp;
 			sourceTree = "<group>";
@@ -140,6 +283,9 @@
 			dependencies = (
 			);
 			name = QiitaHackthonApp;
+			packageProductDependencies = (
+				D26EC0662B5B9D8300DC407B /* UIColorHexSwift */,
+			);
 			productName = QiitaHackthonApp;
 			productReference = D2AC68092B5A23CB00EE5D38 /* QiitaHackthonApp.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +358,9 @@
 				Base,
 			);
 			mainGroup = D2AC68002B5A23CB00EE5D38;
+			packageReferences = (
+				D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
+			);
 			productRefGroup = D2AC680A2B5A23CB00EE5D38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AC68192B5A23CD00EE5D38 /* LaunchScreen.storyboard in Resources */,
+				D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */,
 				D2AC68162B5A23CD00EE5D38 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,9 +404,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */,
 				D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */,
+				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
+				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
+				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
+				D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */,
+				D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */,
+				D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */,
+				D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */,
+				D2993FDE2B5A63D400B989D9 /* TagEntity.swift in Sources */,
+				D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */,
+				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
+				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
+				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
+				D2993FE72B5A650800B989D9 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,8 +594,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QiitaHackthonApp/Info.plist;
+				INFOPLIST_FILE = QiitaHackthonApp/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -457,8 +622,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QiitaHackthonApp/Info.plist;
+				INFOPLIST_FILE = QiitaHackthonApp/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -589,6 +755,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D26EC0662B5B9D8300DC407B /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D2AC68012B5A23CB00EE5D38 /* Project object */;
 }
