@@ -1,7 +1,6 @@
 import {
   CallHandler,
   ExecutionContext,
-  HttpException,
   Injectable,
   NestInterceptor,
   NotFoundException,
