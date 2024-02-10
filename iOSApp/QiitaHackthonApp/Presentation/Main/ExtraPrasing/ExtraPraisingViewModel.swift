@@ -17,13 +17,19 @@ class ExtraPraisingViewModel: ObservableObject {
     @Published var leadComment = "jjfioasjesjfoaesfjejiaeojsjojsfoajsosofjsefofjsoefjas"
     @Published var leadCommentUserName = "Hikaru"
     @Published var leadCommentUserImageName = "cat"
+
+    @Published var myImageName = "cat"
+    @Published var myName = "Yuki"
+
+
+
 //    @Published var
 
-    func postComment(comment: String) {
+    func postComment() {
 
     }
 
-    func postStamp(stamp: String) {
+    func postStamp() {
 
     }
 }

@@ -41,128 +41,60 @@ struct PraisedView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
                 Spacer()
-                Group {
-                    LeadCommentView(
-                        stamps: $viewModel.stamps,
+
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.yellow103)
+                    VStack {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 45))]) {
+                            ForEach($viewModel.stamps, id: \.self) { stamp in
+                                StampView(imageName: stamp.imageName, number: stamp.count)
+                            }
+                        }
+                        .offset(y: -40)
+
+                        Group {
+                            Text(viewModel.leadComment)
+                                .foregroundStyle(Color.gray100)
+                            HStack {
+                                Spacer()
+                                Image(viewModel.userImageName)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(viewModel.userName)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color.gray100)
+                            }
+                        }
+                        .offset(y: -20)
+                    }
+                    .padding(20)
+                }
+
+                ForEach($viewModel.comments, id: \.self) { comment in
+                    CommentView(
                         comment: $viewModel.leadComment,
                         userName: $viewModel.leadCommentUserName,
                         userImageName: $viewModel.leadCommentUserImageName
                     )
-                    ForEach($viewModel.comments, id: \.self) { comment in
-                        CommentView(
-                            comment: $viewModel.leadComment,
-                            userName: $viewModel.leadCommentUserName,
-                            userImageName: $viewModel.leadCommentUserImageName
-                        )
-                    }
                 }
-                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
 
                 Spacer()
                 Button(action: {
                     print("tap buton")
                 }) {
                     Text("次のバトンへつなぐ").fontWeight(.bold)
+                        .padding()
+                        .foregroundColor(Color.black108)
+                        .background(.yellow)
+                        .cornerRadius(40.0)
                 }
-                .buttonStyle(MyButtonStyle())
-
             }
         }
         .padding(20)
         .background(Color.black108)
-    }
-}
-
-struct StampStackView: View {
-    @Binding var stamps: [Stamp]
-
-    var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 45))]) {
-            ForEach($stamps, id: \.self) { stamp in
-                StampView(imageName: stamp.imageName, number: stamp.count)
-            }
-            Button(action: {
-                print("tap buton")
-            }) {
-                PlusView()
-            }
-        }
-    }
-}
-
-struct LeadCommentView: View {
-    @Binding var stamps: [Stamp]
-    @Binding var comment: String
-    @Binding var userName: String
-    @Binding var userImageName: String
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color.yellow103)
-            VStack {
-                StampStackView(stamps: $stamps).offset(y: -40)
-
-                Group {
-                    Text(comment)
-                        .foregroundStyle(Color.gray100)
-                    HStack {
-                        Spacer()
-                        Image(userImageName)
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                        Text(userName)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color.gray100)
-                    }
-                }
-                .offset(y: -20)
-            }
-            .padding(20)
-        }
-    }
-}
-
-struct CommentView: View {
-    @Binding var comment: String
-    @Binding var userName: String
-    @Binding var userImageName: String
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color.gray100)
-            VStack {
-                Text(comment)
-                    .foregroundStyle(Color.grayText)
-                HStack {
-                    Spacer()
-                    Image(userImageName)
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                    Text(userName)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color.white107)
-                }
-            }
-            .padding(20)
-        }
-    }
-}
-
-struct MyButtonStyle: ButtonStyle {
-  func makeBody(configuration: Self.Configuration) -> some View {
-    configuration.label
-        .padding()
-        .foregroundColor(Color.black108)
-        .background(.yellow)
-        .cornerRadius(40.0)
-        .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-        .opacity(configuration.isPressed ? 0.4 : 1)
     }
 }
 

@@ -66,6 +66,7 @@
 		EABA34822B77DECB008B18CD /* ExtraPraisingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34812B77DECB008B18CD /* ExtraPraisingViewModel.swift */; };
 		EABA34842B77DFC0008B18CD /* PlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34832B77DFC0008B18CD /* PlusView.swift */; };
 		EABA34862B77DFDC008B18CD /* StampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34852B77DFDC008B18CD /* StampView.swift */; };
+		EABA34882B77E2A3008B18CD /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34872B77E2A3008B18CD /* CommentView.swift */; };
 		EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */; };
 		EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193512B774E450025CF3C /* UIView+Layout.swift */; };
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
@@ -158,6 +159,7 @@
 		EABA34812B77DECB008B18CD /* ExtraPraisingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPraisingViewModel.swift; sourceTree = "<group>"; };
 		EABA34832B77DFC0008B18CD /* PlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusView.swift; sourceTree = "<group>"; };
 		EABA34852B77DFDC008B18CD /* StampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampView.swift; sourceTree = "<group>"; };
+		EABA34872B77E2A3008B18CD /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
 		EAC193512B774E450025CF3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */,
 				EABA34832B77DFC0008B18CD /* PlusView.swift */,
 				EABA34852B77DFDC008B18CD /* StampView.swift */,
+				EABA34872B77E2A3008B18CD /* CommentView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EABA34862B77DFDC008B18CD /* StampView.swift in Sources */,
+				EABA34882B77E2A3008B18CD /* CommentView.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
