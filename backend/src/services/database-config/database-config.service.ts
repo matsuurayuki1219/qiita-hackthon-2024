@@ -8,15 +8,15 @@ import { Comment } from '../../entities/Comment';
 
 @Injectable()
 export class DatabaseConfigService {
-  constructor(private configService: ConfigService) {}
   createTypeOrmOptions(): TypeOrmModuleOptions {
+    const configService = new ConfigService();
     return {
       type: 'mysql',
-      host: this.configService.get('DB_HOST'),
-      port: this.configService.get('DB_PORT'),
-      username: this.configService.get('DB_USERNAME'),
-      password: this.configService.get('DB_PASSWORD'),
-      database: this.configService.get('DB_NAME'),
+      host: configService.get('DB_HOST'),
+      port: configService.get('DB_PORT'),
+      username: configService.get('DB_USERNAME'),
+      password: configService.get('DB_PASSWORD'),
+      database: configService.get('DB_DATABASE'),
       entities: [User, Praise, Stamp, Comment],
     };
   }

@@ -1,11 +1,12 @@
 import {
   Body,
   Controller,
-  Get, NotFoundException, Param,
+  Get,
+  Param,
   Post,
   Put,
   Request,
-  UseGuards
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiBearerAuth,
@@ -24,6 +25,7 @@ import { PutStamp } from 'src/request_models/put-stamp/put-stamp';
 import { CurrentPraiseResponse } from 'src/view_models/current-praise/current-praise';
 import { PraiseResponse } from 'src/view_models/praise-response/praise-response';
 import { StampResponse } from 'src/view_models/stamp-response/stamp-response';
+import { CommentResponse } from 'src/view_models/comment-response/comment-response';
 
 @ApiBearerAuth()
 @ApiTags('praise')
@@ -68,7 +70,7 @@ export class PrisesController {
 
   @Put('/:praise_id/comment')
   @ApiCreatedResponse({
-    type: Comment,
+    type: CommentResponse,
   })
   @ApiNotFoundResponse()
   async putComment(

@@ -51,7 +51,7 @@ export class CurrentPraiseResponse {
   from_user_id: User['id'];
 
   @ApiProperty({
-    type: Comment,
+    type: CommentResponse,
     isArray: true,
     description: 'The comments of the Praise',
   })
