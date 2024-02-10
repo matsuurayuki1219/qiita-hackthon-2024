@@ -23,13 +23,17 @@ import { Reaction } from 'src/models/reaction/reaction';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
 import { PutReaction } from 'src/request_models/put-reaction/put-reaction';
 import { PraiseService } from 'src/services/praise/praise.service';
+import { UserService } from 'src/services/user/user.service';
 
 @ApiBearerAuth()
 @ApiTags('prises')
 @UseGuards(AuthGuard)
 @Controller('prises')
 export class PrisesController {
-  constructor(private priseService: PraiseService) {}
+  constructor(
+    private priseService: PraiseService,
+    private userService: UserService,
+  ) {}
   @Post('/')
   @ApiCreatedResponse({
     description: 'The record has been successfully created.',
@@ -40,12 +44,14 @@ export class PrisesController {
     @Body() body: PostPriseRequest,
   ) {
     const from_user_id = (req.user as any).sub;
-    return this.priseService.postPraise({
+    const praise = await this.priseService.postPraise({
       title: body.title,
       description: body.description,
       from_user_id: from_user_id,
       to_user_id: body.to_user_id,
     });
+    await this.userService.switchStatus(body.to_user_id);
+    return praise;
   }
 
   @Get('/current_praise')

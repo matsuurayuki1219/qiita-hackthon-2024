@@ -4,6 +4,7 @@ import { Reaction } from 'src/models/reaction/reaction';
 
 @Injectable()
 export class PraiseService {
+  constructor() {}
   private readonly praises: Praise[] = [];
 
   async postPraise(praise: Omit<Praise, 'id' | 'reactions'>): Promise<Praise> {

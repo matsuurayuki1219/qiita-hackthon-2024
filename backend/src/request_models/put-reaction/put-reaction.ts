@@ -1,8 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class PutReaction {
-  @ApiProperty({ description: 'The comment of the Reaction' })
+  @ApiProperty({
+    example: '素晴らしい！',
+    description: 'The comment of the Reaction',
+  })
   comment: string;
-  @ApiProperty({ description: 'The emoji of the Reaction' })
+  @ApiProperty({ example: '👍', description: 'The emoji of the Reaction' })
   emoji: string;
 }
