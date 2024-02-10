@@ -47,6 +47,9 @@
 		EAC1935A2B7755180025CF3C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193592B7755180025CF3C /* Then.swift */; };
 		EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */; };
 		EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */; };
+		EAC1936B2B7768600025CF3C /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EAC1936A2B7768600025CF3C /* Nuke */; };
+		EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */; };
+		EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,8 @@
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentSharedViewController.swift; sourceTree = "<group>"; };
 		EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
+		EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
+		EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC1936B2B7768600025CF3C /* Nuke in Frameworks */,
 				D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */,
 				EAC193582B7752590025CF3C /* Then in Frameworks */,
 			);
@@ -308,6 +314,8 @@
 				EAC193512B774E450025CF3C /* UIView+Layout.swift */,
 				EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */,
 				EAAB54962B774C3A00B5E138 /* CoconiStack */,
+				EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */,
+				EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 			packageProductDependencies = (
 				D26EC0662B5B9D8300DC407B /* UIColorHexSwift */,
 				EAC193572B7752590025CF3C /* Then */,
+				EAC1936A2B7768600025CF3C /* Nuke */,
 			);
 			productName = QiitaHackthonApp;
 			productReference = D2AC68092B5A23CB00EE5D38 /* QiitaHackthonApp.app */;
@@ -433,6 +442,7 @@
 			packageReferences = (
 				D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
 				EAC193562B7752590025CF3C /* XCRemoteSwiftPackageReference "Then" */,
+				EAC193692B7768600025CF3C /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = D2AC680A2B5A23CB00EE5D38 /* Products */;
 			projectDirPath = "";
@@ -483,6 +493,7 @@
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
+				EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */,
 				EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
@@ -500,6 +511,7 @@
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
 				EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */,
+				EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */,
 				EAAB54AD2B774C3A00B5E138 /* StackCollectionViewCell.swift in Sources */,
 				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
 				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
@@ -861,6 +873,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		EAC193692B7768600025CF3C /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -873,6 +893,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EAC193562B7752590025CF3C /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		EAC1936A2B7768600025CF3C /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAC193692B7768600025CF3C /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
