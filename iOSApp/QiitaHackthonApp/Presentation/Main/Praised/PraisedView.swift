@@ -13,11 +13,11 @@ struct PraisedView: View {
     @ObservedObject var viewModel: PraisedViewModel
 
     var attributedUserName: AttributedString {
-         var result = AttributedString("\(viewModel.userName)")
-         result.font = .title2
-         result.foregroundColor = Color(hex: "#F8BD32")
-         return result
-     }
+        var result = AttributedString("\(viewModel.userName)")
+        result.font = .title2
+        result.foregroundColor = .yellow103
+        return result
+    }
 
     var body: some View {
         ScrollView {
@@ -51,7 +51,11 @@ struct PraisedView: View {
                         userImageName: $viewModel.leadCommentUserImageName
                     )
                     ForEach($viewModel.comments, id: \.self) { comment in
-                        CommentView()
+                        CommentView(
+                            comment: $viewModel.leadComment,
+                            userName: $viewModel.leadCommentUserName,
+                            userImageName: $viewModel.leadCommentUserImageName
+                        )
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
@@ -60,15 +64,14 @@ struct PraisedView: View {
                 Button(action: {
                     print("tap buton")
                 }) {
-                    Text("次のバトンへつなぐ")
-                        .fontWeight(.bold)
+                    Text("次のバトンへつなぐ").fontWeight(.bold)
                 }
                 .buttonStyle(MyButtonStyle())
 
             }
         }
         .padding(20)
-        .background(Color(hex: "#292929"))
+        .background(Color.black108)
 
     }
 }
@@ -77,7 +80,7 @@ struct PlusView: View {
     var body: some View {
         ZStack {
             Circle()
-                .fill(Color(hex: "#444444"))
+                .fill(Color.gray100)
                 .padding(4)
             Text("+")
                 .font(.title)
@@ -95,7 +98,7 @@ struct StampView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color(hex: "#444444"))
+                .fill(Color.gray100)
             Text(imageName) // image type
             HStack {
                 Spacer()
@@ -138,13 +141,13 @@ struct LeadCommentView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(hex: "#F8BD32"))
+                .fill(Color.yellow103)
             VStack {
                 StampStackView(stamps: $stamps).offset(y: -40)
 
                 Group {
                     Text(comment)
-                        .foregroundStyle(Color(hex: "#333333"))
+                        .foregroundStyle(Color.gray100)
                     HStack {
                         Spacer()
                         Image(userImageName)
@@ -154,7 +157,7 @@ struct LeadCommentView: View {
                         Text(userName)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundStyle(Color(hex: "#333333"))
+                            .foregroundStyle(Color.gray100)
                     }
                 }
                 .offset(y: -20)
@@ -165,23 +168,27 @@ struct LeadCommentView: View {
 }
 
 struct CommentView: View {
+    @Binding var comment: String
+    @Binding var userName: String
+    @Binding var userImageName: String
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(hex: "#333333"))
+                .fill(Color.gray100)
             VStack {
-                Text("みんなが気付かぬところに目が届く素晴らしさ👏掃除ありがと！")
-                    .foregroundStyle(Color(hex: "#C8C8C8"))
+                Text(comment)
+                    .foregroundStyle(Color.grayText)
                 HStack {
                     Spacer()
-                    Image("cat")
+                    Image(userImageName)
                         .resizable()
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
-                    Text("Koki")
+                    Text(userName)
                         .font(.title3)
                         .fontWeight(.bold)
-                        .foregroundStyle(Color(hex: "#FFFFFF"))
+                        .foregroundStyle(Color.white107)
                 }
             }
             .padding(20)
@@ -193,7 +200,7 @@ struct MyButtonStyle: ButtonStyle {
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
         .padding()
-        .foregroundColor(Color(hex: "#292929"))
+        .foregroundColor(Color.black108)
         .background(.yellow)
         .cornerRadius(40.0)
         .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
