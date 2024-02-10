@@ -48,7 +48,7 @@ struct PraisedView: View {
                     VStack {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 45))]) {
                             ForEach($viewModel.stamps, id: \.self) { stamp in
-                                StampView(imageName: stamp.imageName, number: stamp.count)
+                                StampView(reactionStamp: stamp.reactionStamp, number: stamp.count)
                             }
                         }
                         .offset(y: -40)

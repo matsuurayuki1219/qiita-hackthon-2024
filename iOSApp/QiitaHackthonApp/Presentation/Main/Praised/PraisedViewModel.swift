@@ -8,7 +8,7 @@
 import Foundation
 
 struct Stamp: Hashable {
-    var imageName: String
+    var reactionStamp: ReactionStamp
     var count: Int
 }
 
@@ -20,7 +20,7 @@ struct Coment: Hashable {
 
 class PraisedViewModel: ObservableObject {
     @Published var comments = ["asjefklfaslk"]
-    @Published var stamps = [Stamp(imageName: "stamp_heart", count: 3), Stamp(imageName: "stamp_clap", count: 1),]
+    @Published var stamps = [Stamp(reactionStamp: .clap, count: 3), Stamp(reactionStamp: .good, count: 1),]
 
     @Published var userImageName = "cat"
     @Published var userName = "Yuki"

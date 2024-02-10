@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ExtraPraisingView: View {
     @ObservedObject var viewModel: ExtraPraisingViewModel
-    
+    @State var showingBottomSheet = false
+
     var attributedUserName: AttributedString {
         var result = AttributedString("\(viewModel.userName)")
         result.font = .title2
         result.foregroundColor = .yellow103
         return result
     }
-    
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -26,7 +27,7 @@ struct ExtraPraisingView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
                 Image("nice_pass")
-                
+
                 VStack(spacing: -15) {
                     HStack {
                         Image(viewModel.userImageName)
@@ -51,16 +52,17 @@ struct ExtraPraisingView: View {
                     VStack {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 45))]) {
                             ForEach($viewModel.stamps, id: \.self) { stamp in
-                                StampView(imageName: stamp.imageName, number: stamp.count)
+                                StampView(didTap: viewModel.addReactionStamp, reactionStamp: stamp.reactionStamp, number: stamp.count)
                             }
                             Button(action: {
                                 print("tap buton")
+                                showingBottomSheet.toggle()
                             }) {
                                 PlusView()
                             }
                         }
                         .offset(y: -40)
-                        
+
                         Group {
                             Text(viewModel.leadComment)
                                 .foregroundStyle(Color.gray100)
@@ -80,7 +82,7 @@ struct ExtraPraisingView: View {
                     }
                     .padding(20)
                 }
-                
+
                 ForEach($viewModel.comments, id: \.self) { comment in
                     CommentView(
                         comment: $viewModel.leadComment,
@@ -126,12 +128,38 @@ struct ExtraPraisingView: View {
                         }
                     }
                     .offset(y: -55)
-                    
                 }
             }
         }
         .padding(20)
         .background(Color.black108)
+        .sheet(isPresented: $showingBottomSheet) {
+            BottomSheetView(didTap: viewModel.addReactionStamp)
+                .presentationDetents([.height(100), .fraction(10)])
+        }
+    }
+}
+
+struct BottomSheetView: View {
+    var didTap: (ReactionStamp) -> Void
+    var body: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(ReactionStamp.allCases, id: \.self) { stamp in
+                    Button(action: {
+                        didTap(stamp)
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.gray100)
+                            Image(stamp.rawValue)
+                        }
+                        .frame(width: 48, height: 48)
+                    }
+                }
+            }
+        }
+        .scrollIndicators(.hidden)
     }
 }
 
