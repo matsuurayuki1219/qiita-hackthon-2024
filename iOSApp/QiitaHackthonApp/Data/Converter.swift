@@ -65,3 +65,37 @@ extension String {
         }
     }
 }
+
+extension PraiseEntity {
+    func toModel() -> PraiseModel {
+        return PraiseModel(
+            id: id,
+            title: title,
+            toUserId: toUserId,
+            fromUserId: fromUserId,
+            comments: comments.map { $0.toModel() },
+            stamps: stamps.map { $0.toModel() }
+        )
+    }
+}
+
+extension CommentEntity {
+    func toModel() -> CommentModel {
+        return CommentModel(
+            id: id,
+            fromUserId: fromUserId,
+            comment: comment
+        )
+    }
+}
+
+
+extension StampEntity {
+    func toModel() -> StampModel {
+        return StampModel(
+            id: id,
+            fromUserId: fromUserId,
+            stamp: stamp
+        )
+    }
+}

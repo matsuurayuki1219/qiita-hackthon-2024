@@ -20,13 +20,13 @@ class PraisingViewModel {
 
     let subject = PassthroughSubject<Action, Never>()
 
-    let repository = PraisedRepository()
+    let repository = PraiseRepository()
 
     func upload(toUserId: Int, text: String) {
         Task {
             do {
                 isLoading = true
-                try await repository.upload(toUserId: toUserId, description: text)
+                try await repository.uploadPraise(toUserId: toUserId, description: text)
                 isLoading = false
                 subject.send(.success)
             } catch {
