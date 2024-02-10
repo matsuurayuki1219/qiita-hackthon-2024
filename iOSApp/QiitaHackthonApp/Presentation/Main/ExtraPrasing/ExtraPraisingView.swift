@@ -21,23 +21,25 @@ struct ExtraPraisingView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text("\(attributedUserName)さんに\n素敵バトンが渡りました")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.white)
                 Image("nice_pass")
-
+                Image("load")
+                    .frame(height: 0)
+                    .offset(y: 130)
                 VStack(spacing: -15) {
                     HStack {
                         AsyncImage(url: URL(string: viewModel.praisedUser?.profileImageUri ?? "")) { image in
                             image.resizable()
                                 .scaledToFill()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 60, height: 60)
                                 .clipShape(Circle())
-                                .offset(x: 10)
+                                .offset(x: 10, y: -10)
                         } placeholder: {
-                            ProgressView()
+                            Image("cat")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
+                                .offset(x: 10, y: -10)
                         }
 
                         AsyncImage(url: URL(string: viewModel.praisingUser?.profileImageUri ?? "")) { image in
@@ -47,11 +49,22 @@ struct ExtraPraisingView: View {
                                 .clipShape(Circle())
                                 .offset(x: 30, y: -18)
                         } placeholder: {
-                            ProgressView()
+                            Image("cat")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
+                                .offset(x: 30, y: -18)
                         }
                     }
                     Image("duo_body")
                 }
+                Spacer(minLength: 40)
+                Text("\(attributedUserName)さんに\n素敵バトンが渡りました")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.white)
                 Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)
@@ -151,6 +164,7 @@ struct ExtraPraisingView: View {
             BottomSheetView(didTap: viewModel.addReactionStamp)
                 .presentationDetents([.height(100), .fraction(10)])
         }
+        .ignoresSafeArea()
     }
 }
 

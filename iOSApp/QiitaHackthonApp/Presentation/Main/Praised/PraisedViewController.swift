@@ -17,6 +17,7 @@ class PraisedViewController: UIViewController {
         super.viewDidLoad()
 
         setBaseSwiftUI()
+        viewModel.prepare()
     }
 
     // MARK: - Private

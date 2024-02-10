@@ -19,22 +19,55 @@ struct Coment: Hashable {
 }
 
 class PraisedViewModel: ObservableObject {
-    @Published var comments = ["asjefklfaslk"]
-    @Published var stamps = [Stamp(reactionStamp: .clap, count: 3), Stamp(reactionStamp: .good, count: 1),]
+    let authRepository = AuthRepository()
+    let userRepository = UserRepository()
+    let praiseRepository = PraiseRepository()
 
-    @Published var userImageName = "cat"
-    @Published var userName = "Yuki"
+    var praiseId: Int?
 
-    @Published var leadComment = "jjfioasjesjfoaesfjejiaeojsjojsfoajsosofjsefofjsoefjas"
-    @Published var leadCommentUserName = "Hikaru"
-    @Published var leadCommentUserImageName = "cat"
-//    @Published var 
+    @Published var inputMessage = ""
 
-    func postComment(comment: String) {
+    // user
+    @Published var praisedUser: MemberModel?  // ✅
+    @Published var praisingUser: MemberModel?  // ✅
+    @Published var myUser: MemberModel? // ✅
 
+    // stamp
+    @Published var stamps: [Stamp] = [] // ✅
+
+    // message
+    @Published var praisingUserMessage: MessageModel? // ✅
+    @Published var extraUserMessages: [MessageModel] = []
+
+    func prepare() {
+        Task {
+            do {
+                let me = try await authRepository.getMe()
+                let members = try await userRepository.getMembers()
+                let praiseModel = try await praiseRepository.getCurrentPraise()
+
+                praiseId = praiseModel.id
+                praisedUser = members.first { $0.id == praiseModel.toUserId }
+                praisingUser = members.first { $0.id == praiseModel.fromUserId }
+                myUser = me
+
+                stamps = praiseModel.stamps.compactMap { Stamp(reactionStamp: ReactionStamp(rawValue: $0.stamp) ?? .clap, count: $0.count) }
+
+                if let praisingUser = praisingUser {
+                    praisingUserMessage = MessageModel(message: praiseModel.description, user: praisingUser)
+                }
+
+                extraUserMessages = praiseModel.comments.compactMap { comment in
+                    let user = members.first { $0.id == comment.fromUserId}
+                    return MessageModel(message: comment.comment, user: user!)
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
-    func postStamp(stamp: String) {
+    func navigateToPraising() {
 
     }
 }

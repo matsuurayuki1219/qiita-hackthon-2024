@@ -10,8 +10,15 @@ import SwiftUI
 struct PraisedView: View {
     @ObservedObject var viewModel: PraisedViewModel
 
-    var attributedUserName: AttributedString {
-        var result = AttributedString("\(viewModel.userName)")
+    var attributedPraisedUserName: AttributedString {
+        var result = AttributedString("\(viewModel.praisedUser?.name ?? "")")
+        result.font = .title2
+        result.foregroundColor = .yellow103
+        return result
+    }
+
+    var attributedPraisingUserName: AttributedString {
+        var result = AttributedString("\(viewModel.praisingUser?.name ?? "")")
         result.font = .title2
         result.foregroundColor = .yellow103
         return result
@@ -20,23 +27,28 @@ struct PraisedView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text("\(attributedUserName)さんの行動が\n素敵バトンをつなぎました")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.white)
                 Image("good_baton")
+                Image("load")
+                    .frame(height: 0)
+                    .offset(y: 180)
 
                 VStack(spacing: -15) {
-                    Image(viewModel.userImageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
+                    AsyncImage(url: URL(string: viewModel.praisedUser?.profileImageUri ?? "")) { image in
+                        image.resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image("cat")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    }
                     Image("solo_body")
                 }
-
-                Text("Yukiさんの素敵さをHikaruさんが\nみんなにシェアしました")
+                Spacer(minLength: 40)
+                Text("\(attributedPraisedUserName)さんの素敵さを\(attributedPraisingUserName)さんが\nみんなにシェアしました")
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
@@ -54,15 +66,19 @@ struct PraisedView: View {
                         .offset(y: -40)
 
                         Group {
-                            Text(viewModel.leadComment)
+                            Text(viewModel.praisingUserMessage?.message ?? "")
                                 .foregroundStyle(Color.gray100)
+                                .multilineTextAlignment(.leading)
                             HStack {
                                 Spacer()
-                                Image(viewModel.userImageName)
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                                Text(viewModel.userName)
+                                AsyncImage(url: URL(string: viewModel.praisingUserMessage?.user.profileImageUri ?? "")) { image in
+                                    image.resizable().scaledToFit()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                Text(viewModel.praisingUserMessage?.user.name ?? "")
                                     .font(.title3)
                                     .fontWeight(.bold)
                                     .foregroundStyle(Color.gray100)
@@ -73,17 +89,18 @@ struct PraisedView: View {
                     .padding(20)
                 }
 
-                ForEach($viewModel.comments, id: \.self) { comment in
-//                    CommentView(
-//                        comment: viewModel.leadComment,
-//                        userName:$viewModel.leadCommentUserName,
-//                        userImageName: viewModel.leadCommentUserImageName
-//                    )
+                ForEach(viewModel.extraUserMessages, id: \.self) { message in
+                    CommentView(
+                        comment: message.message,
+                        userName: message.user.name,
+                        userImageName: message.user.profileImageUri
+                    )
                 }
 
                 Spacer()
                 Button(action: {
                     print("tap buton")
+                    viewModel.navigateToPraising()
                 }) {
                     Text("次のバトンへつなぐ").fontWeight(.bold)
                         .padding()
@@ -95,6 +112,7 @@ struct PraisedView: View {
         }
         .padding(20)
         .background(Color.black108)
+        .ignoresSafeArea()
     }
 }
 
