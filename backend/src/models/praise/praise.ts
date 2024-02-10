@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { User } from '../user/user';
-import { Reaction } from '../reaction/reaction';
+import { Stamp } from '../stamp/stamp';
+import { Comment } from '../comment/comment';
 
 export class Praise {
   @ApiProperty({
@@ -33,9 +34,16 @@ export class Praise {
   from_user_id: User['id'];
 
   @ApiProperty({
-    description: 'The reactions to the Praise',
-    type: Reaction,
+    type: Comment,
     isArray: true,
+    description: 'The comments of the Praise',
   })
-  reactions: Reaction[];
+  comments: Comment[];
+
+  @ApiProperty({
+    type: Stamp,
+    isArray: true,
+    description: 'The stamps of the Praise',
+  })
+  stamps: Stamp[];
 }

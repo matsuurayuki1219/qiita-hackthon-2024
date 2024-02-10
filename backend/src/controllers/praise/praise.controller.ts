@@ -19,11 +19,13 @@ import {
 import { AuthGuard } from 'src/auth/auth-guard/auth-guard.guard';
 import { PostPriseRequest } from 'src/request_models/post-praise-request/post-praise-request';
 import { Praise } from 'src/models/praise/praise';
-import { Reaction } from 'src/models/reaction/reaction';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
-import { PutReaction } from 'src/request_models/put-reaction/put-reaction';
 import { PraiseService } from 'src/services/praise/praise.service';
 import { UserService } from 'src/services/user/user.service';
+import { PutComment } from 'src/request_models/put-comment/put-comment';
+import { Comment } from 'src/models/comment/comment';
+import { Stamp } from 'src/models/stamp/stamp';
+import { PutStamp } from 'src/request_models/put-stamp/put-stamp';
 
 @ApiBearerAuth()
 @ApiTags('praise')
@@ -70,25 +72,45 @@ export class PrisesController {
     return currentPraise;
   }
 
-  @Put('/:praise_id/reactions')
+  @Put('/:praise_id/comment')
   @ApiCreatedResponse({
-    type: Reaction,
+    type: Comment,
   })
   @ApiNotFoundResponse()
-  async putReaction(
+  async putComment(
     @Request() req: PrivateRequest,
     @Param('praise_id') praise_id: number,
-    @Body() body: PutReaction,
+    @Body() body: PutComment,
   ) {
     const praise = await this.priseService.findById(Number(praise_id));
     if (praise == null) {
       throw new NotFoundException();
     }
     const from_user_id = req.user.id;
-    return this.priseService.putReaction(praise, {
+    return this.priseService.putComment(praise, {
       from_user_id: from_user_id,
       comment: body.comment,
-      emoji: body.emoji,
+    });
+  }
+
+  @Put('/:praise_id/stamp')
+  @ApiCreatedResponse({
+    type: Stamp,
+  })
+  @ApiNotFoundResponse()
+  async putStamp(
+    @Request() req: PrivateRequest,
+    @Param('praise_id') praise_id: number,
+    @Body() body: PutStamp,
+  ) {
+    const praise = await this.priseService.findById(Number(praise_id));
+    if (praise == null) {
+      throw new NotFoundException();
+    }
+    const from_user_id = req.user.id;
+    return this.priseService.putStamp(praise, {
+      from_user_id: from_user_id,
+      stamp: body.stamp,
     });
   }
 }
