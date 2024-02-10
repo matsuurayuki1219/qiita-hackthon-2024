@@ -8,13 +8,11 @@
 import Foundation
 
 struct StampEntity: Codable {
-    let id: Int
-    let fromUserId: Int
+    let count: Int
     let stamp: String
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case fromUserId = "from_user_id"
+        case count = "count"
         case stamp = "stamp"
     }
 }

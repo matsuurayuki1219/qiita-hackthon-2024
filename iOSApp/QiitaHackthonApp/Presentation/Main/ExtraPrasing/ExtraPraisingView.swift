@@ -10,9 +10,10 @@ import SwiftUI
 struct ExtraPraisingView: View {
     @ObservedObject var viewModel: ExtraPraisingViewModel
     @State var showingBottomSheet = false
+    @State var inputMessage = ""
 
     var attributedUserName: AttributedString {
-        var result = AttributedString("\(viewModel.userName)")
+        var result = AttributedString("\(viewModel.praisedUser?.name ?? "")")
         result.font = .title2
         result.foregroundColor = .yellow103
         return result
@@ -30,13 +31,13 @@ struct ExtraPraisingView: View {
 
                 VStack(spacing: -15) {
                     HStack {
-                        Image(viewModel.userImageName)
+                        Image(viewModel.praisedUser?.profileImageUri ?? "")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             .offset(x: 10)
-                        Image(viewModel.userImageName)
+                        Image(viewModel.praisingUser?.profileImageUri ?? "")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 60, height: 60)
@@ -64,15 +65,15 @@ struct ExtraPraisingView: View {
                         .offset(y: -40)
 
                         Group {
-                            Text(viewModel.leadComment)
+                            Text(viewModel.praisingUserMessage?.message ?? "")
                                 .foregroundStyle(Color.gray100)
                             HStack {
                                 Spacer()
-                                Image(viewModel.userImageName)
+                                Image(viewModel.praisingUserMessage?.user.profileImageUri ?? "")
                                     .resizable()
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
-                                Text(viewModel.userName)
+                                Text(viewModel.praisingUserMessage?.user.name ?? "")
                                     .font(.title3)
                                     .fontWeight(.bold)
                                     .foregroundStyle(Color.gray100)
@@ -83,11 +84,11 @@ struct ExtraPraisingView: View {
                     .padding(20)
                 }
 
-                ForEach($viewModel.comments, id: \.self) { comment in
+                ForEach(viewModel.extraUserMessages, id: \.self) { message in
                     CommentView(
-                        comment: $viewModel.leadComment,
-                        userName: $viewModel.leadCommentUserName,
-                        userImageName: $viewModel.leadCommentUserImageName
+                        comment: message.message,
+                        userName: message.user.name,
+                        userImageName: message.user.profileImageUri
                     )
                 }
                 Spacer()
@@ -95,15 +96,15 @@ struct ExtraPraisingView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color.gray100)
                     VStack(alignment: .leading) {
-                        Text("efefe")
+                        TextField("コメント入力", text: $inputMessage)
                             .foregroundStyle(Color.grayText)
                         HStack {
                             Spacer()
-                            Image(viewModel.myImageName)
+                            Image(viewModel.myUser?.profileImageUri ?? "")
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
-                            Text(viewModel.myName)
+                            Text(viewModel.myUser?.name ?? "")
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .foregroundStyle(Color.white107)

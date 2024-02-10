@@ -8,7 +8,6 @@
 import Foundation
 
 struct StampModel {
-    let id: Int
-    let fromUserId: Int
     let stamp: String
+    let count: Int
 }

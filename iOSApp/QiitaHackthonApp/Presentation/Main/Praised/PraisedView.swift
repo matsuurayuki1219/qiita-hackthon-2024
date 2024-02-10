@@ -74,11 +74,11 @@ struct PraisedView: View {
                 }
 
                 ForEach($viewModel.comments, id: \.self) { comment in
-                    CommentView(
-                        comment: $viewModel.leadComment,
-                        userName: $viewModel.leadCommentUserName,
-                        userImageName: $viewModel.leadCommentUserImageName
-                    )
+//                    CommentView(
+//                        comment: viewModel.leadComment,
+//                        userName:$viewModel.leadCommentUserName,
+//                        userImageName: viewModel.leadCommentUserImageName
+//                    )
                 }
 
                 Spacer()
