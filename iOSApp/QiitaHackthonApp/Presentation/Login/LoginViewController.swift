@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
 
     private var cancellables: Set<AnyCancellable> = []
 
-    private lazy var idTextField: UITextField = {
+    private lazy var userNameTextField: UITextField = {
         let view = UITextField()
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.borderWidth = 1.0
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(idTextField)
+        view.addSubview(userNameTextField)
         view.addSubview(loginButton)
         view.addSubview(indicatorView)
         setConstraint()
@@ -59,12 +59,12 @@ class LoginViewController: UIViewController {
     }
 
     func setConstraint() {
-        idTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        idTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        idTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        idTextField.heightAnchor.constraint(equalToConstant: 56.0).isActive = true
+        userNameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        userNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        userNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        userNameTextField.heightAnchor.constraint(equalToConstant: 56.0).isActive = true
 
-        loginButton.topAnchor.constraint(equalTo: idTextField.bottomAnchor, constant: 64).isActive = true
+        loginButton.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 64).isActive = true
         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 56.0).isActive = true
@@ -87,8 +87,8 @@ class LoginViewController: UIViewController {
     }
 
     @objc func loginButtonTapped() {
-        guard let id = idTextField.text else { return }
-        viewModel.login(id: id)
+        guard let userName = userNameTextField.text else { return }
+        viewModel.login(userName: userName)
     }
 
 }

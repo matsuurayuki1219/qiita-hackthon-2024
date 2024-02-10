@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D235C23F2B77E7550078335C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C23E2B77E7550078335C /* MainViewController.swift */; };
+		D235C2412B77E7670078335C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2402B77E7670078335C /* MainViewModel.swift */; };
 		D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D26EC0662B5B9D8300DC407B /* UIColorHexSwift */; };
 		D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */; };
 		D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26EC0712B5BA1A300DC407B /* Localizable.strings */; };
@@ -90,6 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D235C23E2B77E7550078335C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D235C2402B77E7670078335C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		D26EC0712B5BA1A300DC407B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2759E5D2B5A7E3400F012BC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				D28CABDB2B77992B00E33C18 /* Praising */,
 				D28CABDA2B77991F00E33C18 /* Praised */,
 				D28CABD92B77990800E33C18 /* Waiting */,
+				D235C23E2B77E7550078335C /* MainViewController.swift */,
+				D235C2402B77E7670078335C /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
 				D277DAFD2B77C19A00FE2E89 /* ProfileImageView.swift in Sources */,
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
+				D235C2412B77E7670078335C /* MainViewModel.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
 				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
@@ -629,6 +636,7 @@
 				D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
+				D235C23F2B77E7550078335C /* MainViewController.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
 				EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */,
