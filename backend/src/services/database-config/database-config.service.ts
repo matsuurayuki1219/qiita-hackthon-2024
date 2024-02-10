@@ -17,6 +17,7 @@ export class DatabaseConfigService {
       username: configService.get('DB_USERNAME'),
       password: configService.get('DB_PASSWORD'),
       database: configService.get('DB_DATABASE'),
+      socketPath: configService.get('INSTANCE_UNIX_SOCKET'),
       entities: [User, Praise, Stamp, Comment],
     };
   }
