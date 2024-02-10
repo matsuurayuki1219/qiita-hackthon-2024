@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CommentView: View {
-    @Binding var comment: String
-    @Binding var userName: String
-    @Binding var userImageName: String
+    var comment: String
+    var userName: String
+    var userImageName: String
 
     var body: some View {
         ZStack {

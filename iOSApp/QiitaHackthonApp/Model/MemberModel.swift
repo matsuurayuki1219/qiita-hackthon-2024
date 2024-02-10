@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemberModel {
+struct MemberModel: Hashable  {
     let id: Int
     let name: String
     let profileImageUri: String

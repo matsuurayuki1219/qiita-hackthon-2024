@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MemberStatus {
+enum MemberStatus{
     case waiting
     case submitter
     case praised

@@ -93,9 +93,8 @@ extension CommentEntity {
 extension StampEntity {
     func toModel() -> StampModel {
         return StampModel(
-            id: id,
-            fromUserId: fromUserId,
-            stamp: stamp
+            stamp: stamp,
+            count: count
         )
     }
 }

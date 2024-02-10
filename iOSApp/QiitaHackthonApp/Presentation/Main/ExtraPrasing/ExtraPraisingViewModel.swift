@@ -7,27 +7,53 @@
 
 import Foundation
 
+struct MessageModel: Hashable {
+    var message: String
+    var user: MemberModel
+}
+
 class ExtraPraisingViewModel: ObservableObject {
-    @Published var comments = ["asjefklfaslk"]
+    let authRepository = AuthRepository()
+    let userRepository = UserRepository()
+    let praiseRepository = PraiseRepository()
+
+    // user
+    @Published var praisedUser: MemberModel?
+    @Published var praisingUser: MemberModel?
+    @Published var myUser: MemberModel?
+
+    // stamp
     @Published var stamps = [Stamp(reactionStamp: .clap, count: 3), Stamp(reactionStamp: .heart, count: 1),]
 
-    @Published var userImageName = "cat"
-    @Published var userName = "Yuki"
+    // message
+    @Published var praisingUserMessage: MessageModel?
+    @Published var extraUserMessages: [MessageModel] = []
+    
+    func prepare() {
+        Task {
+            do {
+                let me = try await authRepository.getMe()
+                let members = try await userRepository.getMembers()
+                let praiseModel = try await praiseRepository.getCurrentPraise()
 
-    @Published var leadComment = "jjfioasjesjfoaesfjejiaeojsjojsfoajsosofjsefofjsoefjas"
-    @Published var leadCommentUserName = "Hikaru"
-    @Published var leadCommentUserImageName = "cat"
+                //                myName = me?.name ?? "Bug"
+                //                myImageName = me?.profileImageUri ?? "Bug"
+                //                userName = praiseModel?.toUserId
 
-    @Published var myImageName = "cat"
-    @Published var myName = "Yuki"
+//                stamps = praiseModel?.stamps.compactMap { Stamp(reactionStamp: ReactionStamp(rawValue: $0.stamp) ?? .clap, count: $0.count) } ?? []
+            } catch {
 
+            }
+        }
 
+    }
     func postComment() {
-
+        // call post comment api
+        // update extraUserMessages
     }
 
     func postStamp() {
-
+        // call post stamp api
     }
 
     func addReactionStamp(_ stamp: ReactionStamp) {
@@ -39,6 +65,8 @@ class ExtraPraisingViewModel: ObservableObject {
         else {
             stamps.append(.init(reactionStamp: stamp, count: 1))
         }
+
+        postStamp()
     }
 }
 
