@@ -26,8 +26,10 @@ export class PraiseService {
   }): Promise<Praise> {
     const praise = new Praise();
     praise.description = body.description;
-    praise.fromUser = await this.userRepository.findOneByOrFail({
-      id: body.from_user_id,
+    praise.fromUser = await this.userRepository.findOneOrFail({
+      where: {
+        id: body.from_user_id,
+      },
     });
     praise.toUser = await this.userRepository.findOneByOrFail({
       id: body.to_user_id,

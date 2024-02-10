@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  NotFoundException,
   Param,
   Post,
   Put,
@@ -45,7 +46,7 @@ export class PrisesController {
     @Request() req: PrivateRequest,
     @Body() body: PostPriseRequest,
   ) {
-    const from_user_id = (req.user as any).sub;
+    const from_user_id = req.user.id;
     const praise = await this.priseService.postPraise({
       description: body.description,
       from_user_id: from_user_id,
@@ -65,6 +66,9 @@ export class PrisesController {
   })
   async currentPraise() {
     const currentPraise = await this.priseService.getCurrentPraise();
+    if (currentPraise == null) {
+      throw new NotFoundException();
+    }
     return new CurrentPraiseResponse(currentPraise);
   }
 
@@ -96,9 +100,10 @@ export class PrisesController {
     @Body() body: PutStamp,
   ) {
     const from_user_id = req.user.id;
-    return this.priseService.putStamp(praise_id, {
+    const stamp = await this.priseService.putStamp(praise_id, {
       from_user_id: from_user_id,
       stamp: body.stamp,
     });
+    return StampResponse.fromEntity(stamp);
   }
 }

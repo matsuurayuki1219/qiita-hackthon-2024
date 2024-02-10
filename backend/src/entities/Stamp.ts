@@ -2,7 +2,6 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
   JoinColumn,
   ManyToOne,
 } from 'typeorm';
@@ -12,15 +11,15 @@ import { Praise } from './Praise';
 
 @Entity()
 export class Stamp extends Base {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
-  @ManyToOne(() => Praise, (praise) => praise.stamps)
+  @ManyToOne(() => Praise, (praise) => praise.stamps, { lazy: true })
   @JoinColumn({
     name: 'praise_id',
     referencedColumnName: 'id',
   })
   praise: Praise;
-  @OneToOne(() => User)
+  @ManyToOne(() => User, { eager: true })
   @JoinColumn({
     name: 'from_user_id',
     referencedColumnName: 'id',

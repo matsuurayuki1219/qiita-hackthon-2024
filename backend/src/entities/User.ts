@@ -10,7 +10,7 @@ export enum UserStatus {
 
 @Entity()
 export class User extends Base {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
   @Column()
   name: string;

@@ -27,8 +27,8 @@ export class PraiseResponse {
       praise.description,
       praise.toUser.id,
       praise.fromUser.id,
-      praise.comments.map(CommentResponse.fromEntity),
-      praise.stamps.map(StampResponse.fromEntity),
+      praise.comments?.map(CommentResponse.fromEntity) ?? [],
+      praise.stamps?.map(StampResponse.fromEntity) ?? [],
     );
   }
   @ApiProperty({

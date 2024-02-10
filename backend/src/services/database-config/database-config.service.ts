@@ -19,6 +19,7 @@ export class DatabaseConfigService {
       database: configService.get('DB_DATABASE'),
       socketPath: configService.get('INSTANCE_UNIX_SOCKET'),
       entities: [User, Praise, Stamp, Comment],
+      charset: 'utf8mb4',
     };
   }
 }

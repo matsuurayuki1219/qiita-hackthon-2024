@@ -2,9 +2,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
   JoinColumn,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 import { User } from './User';
 import { Base } from './Base';
@@ -18,21 +18,15 @@ export class Praise extends Base {
   @Column({ type: 'text' })
   description: string;
 
-  @OneToOne(() => User)
-  @JoinColumn({
-    name: 'from_user_id',
-    referencedColumnName: 'id',
-  })
+  @ManyToOne(() => User, { eager: true })
+  @JoinColumn()
   fromUser: User;
-  @OneToOne(() => User)
-  @JoinColumn({
-    name: 'to_user_',
-    referencedColumnName: 'id',
-  })
+  @ManyToOne(() => User, { eager: true })
+  @JoinColumn()
   toUser: User;
 
-  @OneToMany(() => Stamp, (stamp) => stamp.praise)
+  @OneToMany(() => Stamp, (stamp) => stamp.praise, { eager: true })
   readonly stamps: Stamp[];
-  @OneToMany(() => Comment, (comment) => comment.praise)
+  @OneToMany(() => Comment, (comment) => comment.praise, { eager: true })
   readonly comments: Comment[];
 }
