@@ -69,8 +69,8 @@ extension String {
 extension PraiseEntity {
     func toModel() -> PraiseModel {
         return PraiseModel(
-            id: id,
-            title: title,
+            id: id, 
+            description: description,
             toUserId: toUserId,
             fromUserId: fromUserId,
             comments: comments.map { $0.toModel() },

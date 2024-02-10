@@ -10,7 +10,6 @@ import SwiftUI
 struct ExtraPraisingView: View {
     @ObservedObject var viewModel: ExtraPraisingViewModel
     @State var showingBottomSheet = false
-    @State var inputMessage = ""
 
     var attributedUserName: AttributedString {
         var result = AttributedString("\(viewModel.praisedUser?.name ?? "")")
@@ -31,18 +30,27 @@ struct ExtraPraisingView: View {
 
                 VStack(spacing: -15) {
                     HStack {
+                        AsyncImage(url: URL(string: viewModel.praisedUser?.profileImageUri ?? "")) { image in
+                            image.resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                                .offset(x: 10)
+                        } placeholder: {
+                            ProgressView()
+                        }
+
                         Image(viewModel.praisedUser?.profileImageUri ?? "")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                            .offset(x: 10)
-                        Image(viewModel.praisingUser?.profileImageUri ?? "")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 60, height: 60)
-                            .clipShape(Circle())
-                            .offset(x: 30, y: -18)
+
+                        AsyncImage(url: URL(string: viewModel.praisingUser?.profileImageUri ?? "")) { image in
+                            image.resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
+                                .offset(x: 30, y: -18)
+                        } placeholder: {
+                            ProgressView()
+                        }
                     }
                     Image("duo_body")
                 }
@@ -69,10 +77,13 @@ struct ExtraPraisingView: View {
                                 .foregroundStyle(Color.gray100)
                             HStack {
                                 Spacer()
-                                Image(viewModel.praisingUserMessage?.user.profileImageUri ?? "")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
+                                AsyncImage(url: URL(string: viewModel.praisingUserMessage?.user.profileImageUri ?? "")) { image in
+                                    image.resizable().scaledToFit()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                } placeholder: {
+                                    ProgressView()
+                                }
                                 Text(viewModel.praisingUserMessage?.user.name ?? "")
                                     .font(.title3)
                                     .fontWeight(.bold)
@@ -96,14 +107,17 @@ struct ExtraPraisingView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color.gray100)
                     VStack(alignment: .leading) {
-                        TextField("コメント入力", text: $inputMessage)
+                        TextField("コメント入力", text: $viewModel.inputMessage)
                             .foregroundStyle(Color.grayText)
                         HStack {
                             Spacer()
-                            Image(viewModel.myUser?.profileImageUri ?? "")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
+                            AsyncImage(url: URL(string: viewModel.myUser?.profileImageUri ?? "")) { image in
+                                image.resizable().scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } placeholder: {
+                                ProgressView()
+                            }
                             Text(viewModel.myUser?.name ?? "")
                                 .font(.title3)
                                 .fontWeight(.bold)
