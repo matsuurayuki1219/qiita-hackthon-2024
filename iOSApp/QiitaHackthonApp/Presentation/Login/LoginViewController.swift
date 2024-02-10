@@ -84,6 +84,16 @@ class LoginViewController: UIViewController {
                     self?.indicatorView.stopAnimating()
                 }
             }).store(in: &cancellables)
+
+        viewModel.subject.sink { [weak self] action in
+            switch action {
+            case .success:
+                let vc = MainViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            case .failure:
+                print("Failure!")
+            }
+        }.store(in: &cancellables)
     }
 
     @objc func loginButtonTapped() {
