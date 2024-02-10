@@ -55,6 +55,7 @@ http://localhost:3000/swagger
 
 ### Deploy
 
+1. `cp .env.production .env`
 1. `yarn build`
 1. `gcloud app deploy`
 
