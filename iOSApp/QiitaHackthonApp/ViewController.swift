@@ -10,14 +10,20 @@ import Then
 
 class ViewController: UIViewController {
 
-    lazy var goToComplimentRelayButton = UIButton().then { v in
-        v.setTitle("goToComplimentRelayButton", for: .normal)
-        v.addTarget(self, action: #selector(goToComplimentRelay), for: .touchUpInside)
+    lazy var goToComplimentButton = UIButton().then { v in
+        v.setTitle("goToComplimentButton", for: .normal)
+        v.addTarget(self, action: #selector(goToCompliment), for: .touchUpInside)
+    }
+
+    lazy var goToComplimentSharedButton = UIButton().then { v in
+        v.setTitle("goToComplimentSharedButton", for: .normal)
+        v.addTarget(self, action: #selector(goToComplimentShared), for: .touchUpInside)
     }
 
     private lazy var contentStack = Stack(.vertical).then { v in
         v.items = [
-            goToComplimentRelayButton.stackItem(),
+            goToComplimentButton.stackItem(),
+            goToComplimentSharedButton.stackItem(),
         ]
     }
 
@@ -25,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        view.addSubview(goToComplimentRelayButton)
+        contentStack.views.forEach(view.addSubview)
     }
 
     override func viewWillLayoutSubviews() {
@@ -35,11 +41,15 @@ class ViewController: UIViewController {
     }
 
 
-    @objc func goToComplimentRelay() {
-        let vc = ComplimentRelayViewController()
-        let nav = UINavigationController(rootViewController: vc).then { nav in
-            nav.modalPresentationStyle = .fullScreen
-        }
+    @objc func goToCompliment() {
+        let vc = ComplimentViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
+    }
+
+    @objc func goToComplimentShared() {
+        let vc = ComplimentSharedViewController()
+        let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
     }
 }

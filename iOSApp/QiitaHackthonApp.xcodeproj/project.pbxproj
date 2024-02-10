@@ -42,9 +42,10 @@
 		EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */; };
 		EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */; };
 		EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193512B774E450025CF3C /* UIView+Layout.swift */; };
-		EAC193542B7750FE0025CF3C /* ComplimentRelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193532B7750FE0025CF3C /* ComplimentRelayViewController.swift */; };
+		EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */; };
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
 		EAC1935A2B7755180025CF3C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193592B7755180025CF3C /* Then.swift */; };
+		EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +104,9 @@
 		EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
 		EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
 		EAC193512B774E450025CF3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		EAC193532B7750FE0025CF3C /* ComplimentRelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentRelayViewController.swift; sourceTree = "<group>"; };
+		EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentViewController.swift; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentSharedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,7 +329,8 @@
 		EAC193552B7751040025CF3C /* ComplimentRelay */ = {
 			isa = PBXGroup;
 			children = (
-				EAC193532B7750FE0025CF3C /* ComplimentRelayViewController.swift */,
+				EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */,
+				EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */,
 			);
 			path = ComplimentRelay;
 			sourceTree = "<group>";
@@ -477,7 +480,7 @@
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
-				EAC193542B7750FE0025CF3C /* ComplimentRelayViewController.swift in Sources */,
+				EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
 				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
@@ -499,6 +502,7 @@
 				EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */,
 				EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */,
 				D2993FE72B5A650800B989D9 /* UserModel.swift in Sources */,
+				EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */,
 				EAC1935A2B7755180025CF3C /* Then.swift in Sources */,
 				EAAB54AC2B774C3A00B5E138 /* StackView.swift in Sources */,
 			);
