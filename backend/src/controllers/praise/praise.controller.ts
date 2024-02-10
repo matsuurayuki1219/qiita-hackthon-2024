@@ -17,7 +17,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/auth-guard/auth-guard.guard';
-import { PostPriseRequest } from 'src/equest-models/post-prise-request/post-prise-request';
+import { PostPriseRequest } from 'src/request_models/post-praise-request/post-praise-request';
 import { Praise } from 'src/models/praise/praise';
 import { Reaction } from 'src/models/reaction/reaction';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
@@ -26,9 +26,9 @@ import { PraiseService } from 'src/services/praise/praise.service';
 import { UserService } from 'src/services/user/user.service';
 
 @ApiBearerAuth()
-@ApiTags('prises')
+@ApiTags('praise')
 @UseGuards(AuthGuard)
-@Controller('prises')
+@Controller('praise')
 export class PrisesController {
   constructor(
     private priseService: PraiseService,

@@ -5,7 +5,7 @@ import { UserModule } from './modules/user/user.module';
 import { AuthService } from './services/auth/auth.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { PraiseService } from './services/praise/praise.service';
-import { PrisesController } from './controllers/prises/prises.controller';
+import { PrisesController } from './controllers/praise/praise.controller';
 
 @Module({
   imports: [UserModule, AuthModule],

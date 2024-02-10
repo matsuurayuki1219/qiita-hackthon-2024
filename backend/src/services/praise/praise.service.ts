@@ -7,16 +7,16 @@ export class PraiseService {
   constructor() {}
   private readonly praises: Praise[] = [];
 
-  async postPraise(praise: Omit<Praise, 'id' | 'reactions'>): Promise<Praise> {
-    const prise = new Praise();
-    prise.id = this.praises.length + 1;
-    prise.title = praise.title;
-    prise.description = praise.description;
-    prise.from_user_id = praise.from_user_id;
-    prise.to_user_id = praise.to_user_id;
-    prise.reactions = [];
-    this.praises.push(prise);
-    return prise;
+  async postPraise(body: Omit<Praise, 'id' | 'reactions'>): Promise<Praise> {
+    const praise = new Praise();
+    praise.id = this.praises.length + 1;
+    praise.title = body.title;
+    praise.description = body.description;
+    praise.from_user_id = body.from_user_id;
+    praise.to_user_id = body.to_user_id;
+    praise.reactions = [];
+    this.praises.push(praise);
+    return praise;
   }
 
   async getCurrentPraise(): Promise<Praise | undefined> {

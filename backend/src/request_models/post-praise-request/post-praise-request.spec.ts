@@ -1,4 +1,4 @@
-import { PostPriseRequest } from './post-prise-request';
+import { PostPriseRequest } from './post-praise-request';
 
 describe('PostPriseRequest', () => {
   it('should be defined', () => {
