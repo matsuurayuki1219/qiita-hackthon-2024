@@ -26,6 +26,7 @@ import { PutComment } from 'src/request_models/put-comment/put-comment';
 import { Comment } from 'src/models/comment/comment';
 import { Stamp } from 'src/models/stamp/stamp';
 import { PutStamp } from 'src/request_models/put-stamp/put-stamp';
+import { CurrentPraise } from 'src/viwe_models/current-praise/current-praise';
 
 @ApiBearerAuth()
 @ApiTags('praise')
@@ -59,7 +60,7 @@ export class PrisesController {
   @Get('/current_praise')
   @ApiOkResponse({
     description: 'The record has been successfully created.',
-    type: Praise,
+    type: CurrentPraise,
   })
   @ApiNotFoundResponse({
     description: 'Not found',
@@ -69,7 +70,7 @@ export class PrisesController {
     if (currentPraise == null) {
       throw new NotFoundException();
     }
-    return currentPraise;
+    return new CurrentPraise(currentPraise);
   }
 
   @Put('/:praise_id/comment')
