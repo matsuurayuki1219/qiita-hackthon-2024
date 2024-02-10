@@ -40,8 +40,6 @@ struct ExtraPraisingView: View {
                             ProgressView()
                         }
 
-                        Image(viewModel.praisedUser?.profileImageUri ?? "")
-
                         AsyncImage(url: URL(string: viewModel.praisingUser?.profileImageUri ?? "")) { image in
                             image.resizable()
                                 .scaledToFill()
@@ -75,6 +73,7 @@ struct ExtraPraisingView: View {
                         Group {
                             Text(viewModel.praisingUserMessage?.message ?? "")
                                 .foregroundStyle(Color.gray100)
+                                .multilineTextAlignment(.leading)
                             HStack {
                                 Spacer()
                                 AsyncImage(url: URL(string: viewModel.praisingUserMessage?.user.profileImageUri ?? "")) { image in

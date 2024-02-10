@@ -18,13 +18,18 @@ struct CommentView: View {
                 .fill(Color.gray100)
             VStack {
                 Text(comment)
+                    .multilineTextAlignment(.leading)
                     .foregroundStyle(Color.grayText)
                 HStack {
                     Spacer()
-                    Image(userImageName)
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
+                    AsyncImage(url: URL(string: userImageName)) { image in
+                        image.resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        ProgressView()
+                    }
                     Text(userName)
                         .font(.title3)
                         .fontWeight(.bold)

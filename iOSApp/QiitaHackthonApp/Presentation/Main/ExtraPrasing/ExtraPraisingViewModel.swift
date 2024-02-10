@@ -68,6 +68,7 @@ class ExtraPraisingViewModel: ObservableObject {
         Task {
             do {
                 try await praiseRepository.putPraise(praiseId: praiseId, comment: inputMessage)
+                prepare()
             } catch {
                 // do nothing
             }
@@ -75,8 +76,17 @@ class ExtraPraisingViewModel: ObservableObject {
         // update extraUserMessages
     }
 
-    func postStamp() {
+    func postStamp(_ stamp: ReactionStamp) {
         // call post stamp api
+        guard let praiseId = praiseId else { return }
+        Task {
+            do {
+                try await praiseRepository.putStamp(praiseId: praiseId, stamp: stamp.rawValue)
+                prepare()
+            } catch {
+                // do nothing
+            }
+        }
     }
 
     func addReactionStamp(_ stamp: ReactionStamp) {
@@ -89,7 +99,7 @@ class ExtraPraisingViewModel: ObservableObject {
             stamps.append(.init(reactionStamp: stamp, count: 1))
         }
 
-        postStamp()
+        postStamp(stamp)
     }
 }
 
