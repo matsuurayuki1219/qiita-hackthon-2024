@@ -8,16 +8,22 @@ export class UserService {
       id: 1,
       name: 'John Doe',
       status: 'submitter',
+      image_url:
+        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
     },
     {
       id: 2,
       name: 'Hans Müller',
       status: 'waiting',
+      image_url:
+        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
     },
     {
       id: 3,
       name: 'Alice Schmidt',
       status: 'waiting',
+      image_url:
+        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
     },
   ];
 

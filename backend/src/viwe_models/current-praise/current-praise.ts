@@ -1,9 +1,32 @@
+import { Praise } from 'src/models/praise/praise';
 import { ApiProperty } from '@nestjs/swagger';
-import { User } from '../user/user';
-import { Stamp } from '../stamp/stamp';
-import { Comment } from '../comment/comment';
+import { User } from 'src/models/user/user';
+import { CountByStamp } from '../count-by-stamp/count-by-stamp';
+import { Comment } from 'src/models/comment/comment';
 
-export class Praise {
+export class CurrentPraise {
+  constructor(praise: Praise) {
+    this.id = praise.id;
+    this.title = praise.title;
+    this.description = praise.description;
+    this.to_user_id = praise.to_user_id;
+    this.from_user_id = praise.from_user_id;
+    this.comments = praise.comments;
+    this.stamps = praise.stamps.reduce((acc, stamp) => {
+      const existStamp = acc.find((item) => item.stamp === stamp.stamp);
+      if (existStamp != null) {
+        existStamp.count += 1;
+        return acc;
+      }
+      return [
+        ...acc,
+        {
+          stamp: stamp.stamp,
+          count: 1,
+        },
+      ];
+    }, [] as CountByStamp[]);
+  }
   @ApiProperty({
     example: 1,
     description: 'The unique identifier of the Praise',
@@ -41,9 +64,9 @@ export class Praise {
   comments: Comment[];
 
   @ApiProperty({
-    type: Stamp,
+    type: CountByStamp,
     isArray: true,
     description: 'The stamps of the Praise',
   })
-  stamps: Stamp[];
+  stamps: CountByStamp[];
 }
