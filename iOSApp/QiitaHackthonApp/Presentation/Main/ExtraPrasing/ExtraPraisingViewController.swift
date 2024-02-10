@@ -6,24 +6,37 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ExtraPraisingViewController: UIViewController {
+    let viewModel = ExtraPraisingViewModel()
+
+    // MARK: - UIViewController Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setBaseSwiftUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // MARK: - Private
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setBaseSwiftUI() {
+        let swiftUIView = ExtraPraisingView(viewModel: viewModel)
+        let vc = UIHostingController(rootView: swiftUIView)
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            vc.view.topAnchor.constraint(equalTo: view.topAnchor),
+            vc.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            vc.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
-    */
 
+    private func updateNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
 }

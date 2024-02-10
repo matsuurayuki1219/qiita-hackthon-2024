@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "duo_body.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

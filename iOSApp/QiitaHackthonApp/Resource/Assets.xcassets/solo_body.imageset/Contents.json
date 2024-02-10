@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "solo_body.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
