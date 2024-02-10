@@ -37,3 +37,15 @@ $ yarn run test:cov
 ## Swagger UI
 
 http://localhost:3000/swagger
+
+## GAE
+
+### Deploy
+
+1. `yarn build`
+1. `gcloud app deploy`
+
+### Links 
+
+- https://vocal-circle-387923.an.r.appspot.com/
+- https://vocal-circle-387923.an.r.appspot.com/swagger
