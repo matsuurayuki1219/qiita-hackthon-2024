@@ -20,10 +20,16 @@ class ViewController: UIViewController {
         v.addTarget(self, action: #selector(goToComplimentShared), for: .touchUpInside)
     }
 
+    lazy var goToMemberListViewButton = UIButton().then { v in
+        v.setTitle("goToMemberListViewButton", for: .normal)
+        v.addTarget(self, action: #selector(goToMemberListView), for: .touchUpInside)
+    }
+
     private lazy var contentStack = Stack(.vertical).then { v in
         v.items = [
             goToComplimentButton.stackItem(),
             goToComplimentSharedButton.stackItem(),
+            goToMemberListViewButton.stackItem(),
         ]
     }
 
@@ -49,6 +55,12 @@ class ViewController: UIViewController {
 
     @objc func goToComplimentShared() {
         let vc = ComplimentSharedViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
+    }
+
+    @objc func goToMemberListView() {
+        let vc = MemberListViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
     }
