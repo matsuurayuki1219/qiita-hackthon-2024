@@ -19,7 +19,7 @@ enum PraiseAPI {
         json["description"] = description
         let jsonObject = try JSONSerialization.data(withJSONObject: json, options: [])
         request.httpBody = jsonObject
-        request.addValue("Bearer \(String(describing: UserDefaults.accessToken))", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(String(describing: UserDefaults.accessToken!))", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
@@ -38,7 +38,7 @@ enum PraiseAPI {
         let url = URL(string: "https://vocal-circle-387923.an.r.appspot.com/praise/current_praise")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("Bearer \(String(describing: UserDefaults.accessToken))", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(String(describing: UserDefaults.accessToken!))", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
@@ -61,7 +61,7 @@ enum PraiseAPI {
         json["comment"] = comment
         let jsonObject = try JSONSerialization.data(withJSONObject: json, options: [])
         request.httpBody = jsonObject
-        request.addValue("Bearer \(String(describing: UserDefaults.accessToken))", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(String(describing: UserDefaults.accessToken!))", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
@@ -84,7 +84,7 @@ enum PraiseAPI {
         json["stamp"] = stamp
         let jsonObject = try JSONSerialization.data(withJSONObject: json, options: [])
         request.httpBody = jsonObject
-        request.addValue("Bearer \(String(describing: UserDefaults.accessToken))", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(String(describing: UserDefaults.accessToken!))", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }

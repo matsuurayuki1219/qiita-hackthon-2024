@@ -20,7 +20,7 @@ enum AuthAPI {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
-        if httpStatus.statusCode == 200 {
+        if httpStatus.statusCode == 200 || httpStatus.statusCode == 201 {
             do {
                 return try JSONDecoder().decode(AuthEntity.self, from: data)
             } catch {
@@ -36,7 +36,7 @@ enum AuthAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(String(describing: UserDefaults.accessToken))", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(String(describing: UserDefaults.accessToken!))", forHTTPHeaderField: "Authorization")
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.unknown }
         if httpStatus.statusCode == 200 {
