@@ -64,16 +64,16 @@ private extension QiitaArticleViewController {
 
     func addObserver() {
         viewModel.$articles
-            .sink(receiveValue: { articles in
-                self.articles = articles
+            .sink(receiveValue: { [weak self] articles in
+                self?.articles = articles
             }).store(in: &cancellables)
 
         viewModel.$isLoading
-            .sink(receiveValue: { isLoading in
+            .sink(receiveValue: { [weak self] isLoading in
                 if isLoading {
-                    self.indicatorView.startAnimating()
+                    self?.indicatorView.startAnimating()
                 } else {
-                    self.indicatorView.stopAnimating()
+                    self?.indicatorView.stopAnimating()
                 }
             }).store(in: &cancellables)
     }

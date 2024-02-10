@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D235C23F2B77E7550078335C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C23E2B77E7550078335C /* MainViewController.swift */; };
+		D235C2412B77E7670078335C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2402B77E7670078335C /* MainViewModel.swift */; };
+		D235C2432B77F43C0078335C /* PraiseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2422B77F43C0078335C /* PraiseAPI.swift */; };
+		D235C2452B77F4B40078335C /* PraiseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2442B77F4B40078335C /* PraiseEntity.swift */; };
+		D235C2472B77F5640078335C /* PraiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2462B77F5640078335C /* PraiseModel.swift */; };
+		D235C2492B77F59B0078335C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C2482B77F59B0078335C /* CommentModel.swift */; };
+		D235C24B2B77F5B40078335C /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C24A2B77F5B40078335C /* CommentEntity.swift */; };
+		D235C24D2B77F6050078335C /* StampEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C24C2B77F6050078335C /* StampEntity.swift */; };
+		D235C24F2B77F64B0078335C /* StampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235C24E2B77F64B0078335C /* StampModel.swift */; };
 		D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D26EC0662B5B9D8300DC407B /* UIColorHexSwift */; };
 		D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */; };
 		D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26EC0712B5BA1A300DC407B /* Localizable.strings */; };
@@ -31,7 +40,7 @@
 		D28CABF52B77B94100E33C18 /* PraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABF42B77B94100E33C18 /* PraisingViewController.swift */; };
 		D28CABF92B77BB6400E33C18 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */; };
 		D28CABFB2B77BC2E00E33C18 /* PraisingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */; };
-		D28CABFD2B77BC8800E33C18 /* PraisedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */; };
+		D28CABFD2B77BC8800E33C18 /* PraiseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABFC2B77BC8800E33C18 /* PraiseRepository.swift */; };
 		D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */; };
 		D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */; };
 		D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */; };
@@ -98,6 +107,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D235C23E2B77E7550078335C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D235C2402B77E7670078335C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D235C2422B77F43C0078335C /* PraiseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseAPI.swift; sourceTree = "<group>"; };
+		D235C2442B77F4B40078335C /* PraiseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseEntity.swift; sourceTree = "<group>"; };
+		D235C2462B77F5640078335C /* PraiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseModel.swift; sourceTree = "<group>"; };
+		D235C2482B77F59B0078335C /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		D235C24A2B77F5B40078335C /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		D235C24C2B77F6050078335C /* StampEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampEntity.swift; sourceTree = "<group>"; };
+		D235C24E2B77F64B0078335C /* StampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampModel.swift; sourceTree = "<group>"; };
 		D26EC0692B5B9DC600DC407B /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		D26EC0712B5BA1A300DC407B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2759E5D2B5A7E3400F012BC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -121,7 +139,7 @@
 		D28CABF42B77B94100E33C18 /* PraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewController.swift; sourceTree = "<group>"; };
 		D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewModel.swift; sourceTree = "<group>"; };
-		D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisedRepository.swift; sourceTree = "<group>"; };
+		D28CABFC2B77BC8800E33C18 /* PraiseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRepository.swift; sourceTree = "<group>"; };
 		D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
 		D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewModel.swift; sourceTree = "<group>"; };
 		D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleEntity.swift; sourceTree = "<group>"; };
@@ -284,6 +302,7 @@
 				D2759E5D2B5A7E3400F012BC /* ApiError.swift */,
 				D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */,
 				D28CABEB2B779DF200E33C18 /* UserAPI.swift */,
+				D235C2422B77F43C0078335C /* PraiseAPI.swift */,
 				D28CABD22B775F0300E33C18 /* AuthAPI.swift */,
 				D2993FCD2B5A545200B989D9 /* Entity */,
 				D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */,
@@ -297,7 +316,7 @@
 				D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */,
 				D28CABCC2B775DA900E33C18 /* AuthRepository.swift */,
 				D28CABE92B779DBF00E33C18 /* UserRepository.swift */,
-				D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */,
+				D28CABFC2B77BC8800E33C18 /* PraiseRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -307,6 +326,9 @@
 			children = (
 				D28CABD02B775E5A00E33C18 /* AuthEntity.swift */,
 				D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */,
+				D235C2442B77F4B40078335C /* PraiseEntity.swift */,
+				D235C24C2B77F6050078335C /* StampEntity.swift */,
+				D235C24A2B77F5B40078335C /* CommentEntity.swift */,
 				D28CABED2B779E1400E33C18 /* MemberEntity.swift */,
 				D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */,
 				D2993FDD2B5A63D400B989D9 /* TagEntity.swift */,
@@ -378,6 +400,9 @@
 				D2993FE42B5A64F400B989D9 /* TagModel.swift */,
 				D2DB98172B77D28F0096EB55 /* MemberStatus.swift */,
 				D28CABE52B779D5B00E33C18 /* MemberModel.swift */,
+				D235C24E2B77F64B0078335C /* StampModel.swift */,
+				D235C2482B77F59B0078335C /* CommentModel.swift */,
+				D235C2462B77F5640078335C /* PraiseModel.swift */,
 				D28CABCE2B775E0E00E33C18 /* AuthModel.swift */,
 			);
 			path = Model;
@@ -473,6 +498,8 @@
 				D28CABDB2B77992B00E33C18 /* Praising */,
 				D28CABDA2B77991F00E33C18 /* Praised */,
 				D28CABD92B77990800E33C18 /* Waiting */,
+				D235C23E2B77E7550078335C /* MainViewController.swift */,
+				D235C2402B77E7670078335C /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -626,6 +653,7 @@
 				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
 				D277DAFD2B77C19A00FE2E89 /* ProfileImageView.swift in Sources */,
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
+				D235C2412B77E7670078335C /* MainViewModel.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
 				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
@@ -639,13 +667,16 @@
 				D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */,
+				D235C2432B77F43C0078335C /* PraiseAPI.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
+				D235C2492B77F59B0078335C /* CommentModel.swift in Sources */,
 				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
 				EAD463282B77A21E00A8EF9D /* Color.swift in Sources */,
 				D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */,
 				D28CABEC2B779DF200E33C18 /* UserAPI.swift in Sources */,
 				D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */,
-				D28CABFD2B77BC8800E33C18 /* PraisedRepository.swift in Sources */,
+				D28CABFD2B77BC8800E33C18 /* PraiseRepository.swift in Sources */,
+				D235C24D2B77F6050078335C /* StampEntity.swift in Sources */,
 				D28CABCF2B775E0E00E33C18 /* AuthModel.swift in Sources */,
 				D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */,
 				EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */,
@@ -657,20 +688,24 @@
 				D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */,
 				EABA34822B77DECB008B18CD /* ExtraPraisingViewModel.swift in Sources */,
 				D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */,
+				D235C2452B77F4B40078335C /* PraiseEntity.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EABA34862B77DFDC008B18CD /* StampView.swift in Sources */,
 				EABA34882B77E2A3008B18CD /* CommentView.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
+				D235C23F2B77E7550078335C /* MainViewController.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
 				EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */,
 				D28CABE62B779D5B00E33C18 /* MemberModel.swift in Sources */,
+				D235C24F2B77F64B0078335C /* StampModel.swift in Sources */,
 				EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */,
 				EAAB54AD2B774C3A00B5E138 /* StackCollectionViewCell.swift in Sources */,
 				D28CABCD2B775DA900E33C18 /* AuthRepository.swift in Sources */,
 				D28CABEE2B779E1400E33C18 /* MemberEntity.swift in Sources */,
 				D28CABD52B7765E800E33C18 /* AuthTokenStore.swift in Sources */,
 				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
+				D235C2472B77F5640078335C /* PraiseModel.swift in Sources */,
 				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
 				EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */,
 				D28CABDE2B7799EF00E33C18 /* WaitingViewController.swift in Sources */,
@@ -679,6 +714,7 @@
 				EAC1935C2B7756B00025CF3C /* PraisedViewController.swift in Sources */,
 				EAC1935A2B7755180025CF3C /* Then.swift in Sources */,
 				D28CABEA2B779DBF00E33C18 /* UserRepository.swift in Sources */,
+				D235C24B2B77F5B40078335C /* CommentEntity.swift in Sources */,
 				EAAB54AC2B774C3A00B5E138 /* StackView.swift in Sources */,
 				D28CABFB2B77BC2E00E33C18 /* PraisingViewModel.swift in Sources */,
 			);

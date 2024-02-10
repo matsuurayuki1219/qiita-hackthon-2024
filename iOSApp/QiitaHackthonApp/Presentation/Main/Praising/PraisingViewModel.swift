@@ -11,21 +11,27 @@ import Combine
 @MainActor
 class PraisingViewModel {
 
+    enum Action {
+        case success
+        case failure
+    }
+
     @Published var isLoading = false
 
-    let subject = PassthroughSubject<Void, Never>()
+    let subject = PassthroughSubject<Action, Never>()
 
-    let repository = PraisedRepository()
+    let repository = PraiseRepository()
 
     func upload(toUserId: Int, text: String) {
         Task {
             do {
                 isLoading = true
-                try await repository.upload(toUserId: toUserId, description: text)
+                try await repository.uploadPraise(toUserId: toUserId, description: text)
                 isLoading = false
-                subject.send()
+                subject.send(.success)
             } catch {
                 isLoading = false
+                subject.send(.failure)
             }
         }
     }

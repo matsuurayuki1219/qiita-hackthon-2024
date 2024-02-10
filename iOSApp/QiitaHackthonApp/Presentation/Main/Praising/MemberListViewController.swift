@@ -26,6 +26,7 @@ class MemberListViewController: UIViewController {
         let image = UIImage(systemName: "xmark.circle")
         v.setImage(image, for: .normal)
         v.tintColor = .systemGray
+        v.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
 
     lazy var tableView = UITableView().then { v in
@@ -66,10 +67,10 @@ class MemberListViewController: UIViewController {
 
         let w = view.bounds.width
         let h = view.bounds.height
-        let top = view.safeAreaInsets.top
+        let top = view.safeAreaInsets.top + 20
 
         topTitle.layout { f in
-            f.origin.x = 16
+            f.origin.x = 30
             f.origin.y = top
             f.size = topTitle.sizeJustFit()
         }
@@ -90,18 +91,13 @@ class MemberListViewController: UIViewController {
 
     private func addObserver() {
         viewModel.$members
-            .sink(receiveValue: { members in
-                self.members = members
+            .sink(receiveValue: { [weak self] members in
+                self?.members = members
             }).store(in: &cancellables)
+    }
 
-        viewModel.$isLoading
-            .sink(receiveValue: { isLoading in
-                if isLoading {
-                    // self.indicatorView.startAnimating()
-                } else {
-                    // self.indicatorView.stopAnimating()
-                }
-            }).store(in: &cancellables)
+    @objc func closeButtonTapped() {
+        dismiss(animated: true)
     }
 }
 
