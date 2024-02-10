@@ -37,3 +37,8 @@ $ yarn run test:cov
 ## Swagger UI
 
 http://localhost:3000/swagger
+
+## GAE
+
+- https://vocal-circle-387923.an.r.appspot.com/
+- https://vocal-circle-387923.an.r.appspot.com/swagger
