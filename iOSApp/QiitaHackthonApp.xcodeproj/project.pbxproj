@@ -20,6 +20,8 @@
 		D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD22B775F0300E33C18 /* AuthAPI.swift */; };
 		D28CABD52B7765E800E33C18 /* AuthTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD42B7765E800E33C18 /* AuthTokenStore.swift */; };
 		D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD72B7767DD00E33C18 /* RootViewController.swift */; };
+		D28CABDE2B7799EF00E33C18 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABDD2B7799EF00E33C18 /* WaitingViewController.swift */; };
+		D28CABE02B779A1500E33C18 /* ExtraPraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */; };
 		D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */; };
 		D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */; };
 		D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */; };
@@ -50,10 +52,10 @@
 		EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */; };
 		EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */; };
 		EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193512B774E450025CF3C /* UIView+Layout.swift */; };
-		EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */; };
+		EAC193542B7750FE0025CF3C /* PraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193532B7750FE0025CF3C /* PraisingViewController.swift */; };
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
 		EAC1935A2B7755180025CF3C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193592B7755180025CF3C /* Then.swift */; };
-		EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */; };
+		EAC1935C2B7756B00025CF3C /* PraisedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* PraisedViewController.swift */; };
 		EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */; };
 		EAC1936B2B7768600025CF3C /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EAC1936A2B7768600025CF3C /* Nuke */; };
 		EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */; };
@@ -90,6 +92,8 @@
 		D28CABD22B775F0300E33C18 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		D28CABD42B7765E800E33C18 /* AuthTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenStore.swift; sourceTree = "<group>"; };
 		D28CABD72B7767DD00E33C18 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D28CABDD2B7799EF00E33C18 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
+		D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPraisingViewController.swift; sourceTree = "<group>"; };
 		D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
 		D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewModel.swift; sourceTree = "<group>"; };
 		D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleEntity.swift; sourceTree = "<group>"; };
@@ -124,9 +128,9 @@
 		EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
 		EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
 		EAC193512B774E450025CF3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentViewController.swift; sourceTree = "<group>"; };
+		EAC193532B7750FE0025CF3C /* PraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewController.swift; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentSharedViewController.swift; sourceTree = "<group>"; };
+		EAC1935B2B7756B00025CF3C /* PraisedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisedViewController.swift; sourceTree = "<group>"; };
 		EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
 		EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimation.swift"; sourceTree = "<group>"; };
@@ -177,6 +181,39 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		D28CABD92B77990800E33C18 /* Waiting */ = {
+			isa = PBXGroup;
+			children = (
+				D28CABDD2B7799EF00E33C18 /* WaitingViewController.swift */,
+			);
+			path = Waiting;
+			sourceTree = "<group>";
+		};
+		D28CABDA2B77991F00E33C18 /* Praised */ = {
+			isa = PBXGroup;
+			children = (
+				EAC1935B2B7756B00025CF3C /* PraisedViewController.swift */,
+			);
+			path = Praised;
+			sourceTree = "<group>";
+		};
+		D28CABDB2B77992B00E33C18 /* Praising */ = {
+			isa = PBXGroup;
+			children = (
+				EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */,
+				EAC193532B7750FE0025CF3C /* PraisingViewController.swift */,
+			);
+			path = Praising;
+			sourceTree = "<group>";
+		};
+		D28CABDC2B77995100E33C18 /* ExtraPrasing */ = {
+			isa = PBXGroup;
+			children = (
+				D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */,
+			);
+			path = ExtraPrasing;
+			sourceTree = "<group>";
+		};
 		D2993FCA2B5A543100B989D9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +260,7 @@
 		D2993FCE2B5A548E00B989D9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				EAC193552B7751040025CF3C /* ComplimentRelay */,
+				EAC193552B7751040025CF3C /* Main */,
 				D28CABD62B7767CE00E33C18 /* Root */,
 				D28CABC72B7754A700E33C18 /* Login */,
 				D2993FD42B5A54D700B989D9 /* Utility */,
@@ -368,14 +405,15 @@
 			path = CoconiStack;
 			sourceTree = "<group>";
 		};
-		EAC193552B7751040025CF3C /* ComplimentRelay */ = {
+		EAC193552B7751040025CF3C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */,
-				EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */,
-				EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */,
+				D28CABDC2B77995100E33C18 /* ExtraPrasing */,
+				D28CABDB2B77992B00E33C18 /* Praising */,
+				D28CABDA2B77991F00E33C18 /* Praised */,
+				D28CABD92B77990800E33C18 /* Waiting */,
 			);
-			path = ComplimentRelay;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,7 +566,7 @@
 				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
 				EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */,
-				EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */,
+				EAC193542B7750FE0025CF3C /* PraisingViewController.swift in Sources */,
 				D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */,
@@ -543,6 +581,7 @@
 				D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */,
 				D2993FDE2B5A63D400B989D9 /* TagEntity.swift in Sources */,
 				D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */,
+				D28CABE02B779A1500E33C18 /* ExtraPraisingViewController.swift in Sources */,
 				D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
@@ -556,9 +595,10 @@
 				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
 				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
 				EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */,
+				D28CABDE2B7799EF00E33C18 /* WaitingViewController.swift in Sources */,
 				EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */,
 				D2993FE72B5A650800B989D9 /* UserModel.swift in Sources */,
-				EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */,
+				EAC1935C2B7756B00025CF3C /* PraisedViewController.swift in Sources */,
 				EAC1935A2B7755180025CF3C /* Then.swift in Sources */,
 				EAAB54AC2B774C3A00B5E138 /* StackView.swift in Sources */,
 			);

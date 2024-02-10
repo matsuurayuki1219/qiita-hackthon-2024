@@ -1,5 +1,5 @@
 //
-//  ComplimentViewController.swift
+//  PraisingViewController.swift
 //  QiitaHackthonApp
 //
 //  Created by HONG JEONGSEOB on 2024/02/10.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComplimentViewController: UIViewController {
+class PraisingViewController: UIViewController {
 
     // MARK: - Subview
 
