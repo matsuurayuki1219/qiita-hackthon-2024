@@ -46,6 +46,7 @@
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
 		EAC1935A2B7755180025CF3C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193592B7755180025CF3C /* Then.swift */; };
 		EAC1935C2B7756B00025CF3C /* ComplimentSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */; };
+		EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentViewController.swift; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplimentSharedViewController.swift; sourceTree = "<group>"; };
+		EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 			children = (
 				EAC193532B7750FE0025CF3C /* ComplimentViewController.swift */,
 				EAC1935B2B7756B00025CF3C /* ComplimentSharedViewController.swift */,
+				EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */,
 			);
 			path = ComplimentRelay;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
 				D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */,
 				D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */,
+				EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */,
 				D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */,
 				EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */,
 				D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */,
