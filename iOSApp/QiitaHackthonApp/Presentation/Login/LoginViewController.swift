@@ -77,11 +77,11 @@ class LoginViewController: UIViewController {
 
     func addObserver() {
         viewModel.$isLoading
-            .sink(receiveValue: { isLoading in
+            .sink(receiveValue: { [weak self] isLoading in
                 if isLoading {
-                    self.indicatorView.startAnimating()
+                    self?.indicatorView.startAnimating()
                 } else {
-                    self.indicatorView.stopAnimating()
+                    self?.indicatorView.stopAnimating()
                 }
             }).store(in: &cancellables)
     }

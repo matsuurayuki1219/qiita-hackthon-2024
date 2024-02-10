@@ -54,7 +54,6 @@
 		D2AC682E2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC682D2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift */; };
 		D2AC68302B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC682F2B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift */; };
 		D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB98172B77D28F0096EB55 /* MemberStatus.swift */; };
-		D2DB981A2B77D6800096EB55 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB98192B77D6800096EB55 /* PlaceholderTextView.swift */; };
 		EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54972B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift */; };
 		EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54982B774C3A00B5E138 /* StackButton.swift */; };
 		EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54992B774C3A00B5E138 /* Stack.swift */; };
@@ -142,7 +141,6 @@
 		D2AC682D2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaHackthonAppUITests.swift; sourceTree = "<group>"; };
 		D2AC682F2B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaHackthonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2DB98172B77D28F0096EB55 /* MemberStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStatus.swift; sourceTree = "<group>"; };
-		D2DB98192B77D6800096EB55 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		EAAB54972B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		EAAB54982B774C3A00B5E138 /* StackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackButton.swift; sourceTree = "<group>"; };
 		EAAB54992B774C3A00B5E138 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */,
-				D2DB98192B77D6800096EB55 /* PlaceholderTextView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -604,7 +601,6 @@
 				D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */,
 				D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */,
 				D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */,
-				D2DB981A2B77D6800096EB55 /* PlaceholderTextView.swift in Sources */,
 				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
 				D277DAFD2B77C19A00FE2E89 /* ProfileImageView.swift in Sources */,
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,

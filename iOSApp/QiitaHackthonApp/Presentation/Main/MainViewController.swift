@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(indicatorView)
         view.backgroundColor = UIColor("#292929")
         addConstraint()
         addObserver()
@@ -52,6 +53,15 @@ class MainViewController: UIViewController {
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         }.store(in: &subscriptions)
+
+        viewModel.$isLoading
+            .sink(receiveValue: { [weak self] isLoading in
+                if isLoading {
+                    self?.indicatorView.startAnimating()
+                } else {
+                    self?.indicatorView.stopAnimating()
+                }
+            }).store(in: &subscriptions)
     }
 
 }

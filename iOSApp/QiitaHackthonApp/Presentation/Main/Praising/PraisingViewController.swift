@@ -214,18 +214,19 @@ private extension PraisingViewController {
         viewModel.subject.sink { [weak self] action in
             switch action {
             case .success:
-                print("Success!!")
+                let vc = ExtraPraisingViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
             case .failure:
                 print("Failure!!")
             }
         }.store(in: &subscriptions)
 
         viewModel.$isLoading
-            .sink(receiveValue: { isLoading in
+            .sink(receiveValue: { [weak self] isLoading in
                 if isLoading {
-                    self.indicatorView.startAnimating()
+                    self?.indicatorView.startAnimating()
                 } else {
-                    self.indicatorView.stopAnimating()
+                    self?.indicatorView.stopAnimating()
                 }
             }).store(in: &subscriptions)
     }

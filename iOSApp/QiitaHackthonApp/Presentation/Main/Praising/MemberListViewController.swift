@@ -91,17 +91,8 @@ class MemberListViewController: UIViewController {
 
     private func addObserver() {
         viewModel.$members
-            .sink(receiveValue: { members in
-                self.members = members
-            }).store(in: &cancellables)
-
-        viewModel.$isLoading
-            .sink(receiveValue: { isLoading in
-                if isLoading {
-                    // self.indicatorView.startAnimating()
-                } else {
-                    // self.indicatorView.stopAnimating()
-                }
+            .sink(receiveValue: { [weak self] members in
+                self?.members = members
             }).store(in: &cancellables)
     }
 
