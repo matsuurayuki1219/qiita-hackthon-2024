@@ -12,6 +12,7 @@
 		D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26EC0712B5BA1A300DC407B /* Localizable.strings */; };
 		D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5D2B5A7E3400F012BC /* ApiError.swift */; };
 		D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */; };
+		D277DAFD2B77C19A00FE2E89 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */; };
 		D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABC82B7754C500E33C18 /* LoginViewController.swift */; };
 		D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABCA2B7754CE00E33C18 /* LoginViewModel.swift */; };
 		D28CABCD2B775DA900E33C18 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABCC2B775DA900E33C18 /* AuthRepository.swift */; };
@@ -22,6 +23,15 @@
 		D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD72B7767DD00E33C18 /* RootViewController.swift */; };
 		D28CABDE2B7799EF00E33C18 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABDD2B7799EF00E33C18 /* WaitingViewController.swift */; };
 		D28CABE02B779A1500E33C18 /* ExtraPraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */; };
+		D28CABE62B779D5B00E33C18 /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABE52B779D5B00E33C18 /* MemberModel.swift */; };
+		D28CABE82B779D7C00E33C18 /* MemberListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABE72B779D7C00E33C18 /* MemberListViewModel.swift */; };
+		D28CABEA2B779DBF00E33C18 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABE92B779DBF00E33C18 /* UserRepository.swift */; };
+		D28CABEC2B779DF200E33C18 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABEB2B779DF200E33C18 /* UserAPI.swift */; };
+		D28CABEE2B779E1400E33C18 /* MemberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABED2B779E1400E33C18 /* MemberEntity.swift */; };
+		D28CABF52B77B94100E33C18 /* PraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABF42B77B94100E33C18 /* PraisingViewController.swift */; };
+		D28CABF92B77BB6400E33C18 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */; };
+		D28CABFB2B77BC2E00E33C18 /* PraisingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */; };
+		D28CABFD2B77BC8800E33C18 /* PraisedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */; };
 		D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */; };
 		D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */; };
 		D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */; };
@@ -41,6 +51,7 @@
 		D2AC68242B5A23CD00EE5D38 /* QiitaHackthonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC68232B5A23CD00EE5D38 /* QiitaHackthonAppTests.swift */; };
 		D2AC682E2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC682D2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift */; };
 		D2AC68302B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC682F2B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift */; };
+		D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB98172B77D28F0096EB55 /* MemberStatus.swift */; };
 		EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54972B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift */; };
 		EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54982B774C3A00B5E138 /* StackButton.swift */; };
 		EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB54992B774C3A00B5E138 /* Stack.swift */; };
@@ -52,11 +63,9 @@
 		EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */; };
 		EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */; };
 		EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193512B774E450025CF3C /* UIView+Layout.swift */; };
-		EAC193542B7750FE0025CF3C /* PraisingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193532B7750FE0025CF3C /* PraisingViewController.swift */; };
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
 		EAC1935A2B7755180025CF3C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193592B7755180025CF3C /* Then.swift */; };
 		EAC1935C2B7756B00025CF3C /* PraisedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935B2B7756B00025CF3C /* PraisedViewController.swift */; };
-		EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */; };
 		EAC1936B2B7768600025CF3C /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EAC1936A2B7768600025CF3C /* Nuke */; };
 		EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */; };
 		EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */; };
@@ -84,6 +93,7 @@
 		D26EC0712B5BA1A300DC407B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2759E5D2B5A7E3400F012BC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaRepository.swift; sourceTree = "<group>"; };
+		D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D28CABC82B7754C500E33C18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D28CABCA2B7754CE00E33C18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D28CABCC2B775DA900E33C18 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
@@ -94,6 +104,15 @@
 		D28CABD72B7767DD00E33C18 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D28CABDD2B7799EF00E33C18 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPraisingViewController.swift; sourceTree = "<group>"; };
+		D28CABE52B779D5B00E33C18 /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
+		D28CABE72B779D7C00E33C18 /* MemberListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewModel.swift; sourceTree = "<group>"; };
+		D28CABE92B779DBF00E33C18 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D28CABEB2B779DF200E33C18 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		D28CABED2B779E1400E33C18 /* MemberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEntity.swift; sourceTree = "<group>"; };
+		D28CABF42B77B94100E33C18 /* PraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewController.swift; sourceTree = "<group>"; };
+		D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
+		D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewModel.swift; sourceTree = "<group>"; };
+		D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisedRepository.swift; sourceTree = "<group>"; };
 		D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
 		D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewModel.swift; sourceTree = "<group>"; };
 		D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleEntity.swift; sourceTree = "<group>"; };
@@ -117,6 +136,7 @@
 		D2AC68292B5A23CD00EE5D38 /* QiitaHackthonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaHackthonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AC682D2B5A23CD00EE5D38 /* QiitaHackthonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaHackthonAppUITests.swift; sourceTree = "<group>"; };
 		D2AC682F2B5A23CD00EE5D38 /* QiitaHackthonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaHackthonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2DB98172B77D28F0096EB55 /* MemberStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStatus.swift; sourceTree = "<group>"; };
 		EAAB54972B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		EAAB54982B774C3A00B5E138 /* StackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackButton.swift; sourceTree = "<group>"; };
 		EAAB54992B774C3A00B5E138 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -128,10 +148,8 @@
 		EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
 		EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
 		EAC193512B774E450025CF3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		EAC193532B7750FE0025CF3C /* PraisingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisingViewController.swift; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		EAC1935B2B7756B00025CF3C /* PraisedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraisedViewController.swift; sourceTree = "<group>"; };
-		EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		EAC1936C2B7768800025CF3C /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
 		EAC1936E2B7769690025CF3C /* UIView+CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomAnimation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,8 +218,10 @@
 		D28CABDB2B77992B00E33C18 /* Praising */ = {
 			isa = PBXGroup;
 			children = (
-				EAC1935D2B77579D0025CF3C /* MemberListViewController.swift */,
-				EAC193532B7750FE0025CF3C /* PraisingViewController.swift */,
+				D28CABF42B77B94100E33C18 /* PraisingViewController.swift */,
+				D28CABE72B779D7C00E33C18 /* MemberListViewModel.swift */,
+				D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */,
+				D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */,
 			);
 			path = Praising;
 			sourceTree = "<group>";
@@ -212,6 +232,14 @@
 				D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */,
 			);
 			path = ExtraPrasing;
+			sourceTree = "<group>";
+		};
+		D28CABEF2B77A66000E33C18 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D2993FCA2B5A543100B989D9 /* Data */ = {
@@ -230,6 +258,7 @@
 			children = (
 				D2759E5D2B5A7E3400F012BC /* ApiError.swift */,
 				D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */,
+				D28CABEB2B779DF200E33C18 /* UserAPI.swift */,
 				D28CABD22B775F0300E33C18 /* AuthAPI.swift */,
 				D2993FCD2B5A545200B989D9 /* Entity */,
 				D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */,
@@ -242,6 +271,8 @@
 			children = (
 				D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */,
 				D28CABCC2B775DA900E33C18 /* AuthRepository.swift */,
+				D28CABE92B779DBF00E33C18 /* UserRepository.swift */,
+				D28CABFC2B77BC8800E33C18 /* PraisedRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -251,6 +282,7 @@
 			children = (
 				D28CABD02B775E5A00E33C18 /* AuthEntity.swift */,
 				D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */,
+				D28CABED2B779E1400E33C18 /* MemberEntity.swift */,
 				D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */,
 				D2993FDD2B5A63D400B989D9 /* TagEntity.swift */,
 			);
@@ -260,6 +292,7 @@
 		D2993FCE2B5A548E00B989D9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D28CABEF2B77A66000E33C18 /* Common */,
 				EAC193552B7751040025CF3C /* Main */,
 				D28CABD62B7767CE00E33C18 /* Root */,
 				D28CABC72B7754A700E33C18 /* Login */,
@@ -318,6 +351,8 @@
 				D2993FE22B5A64E000B989D9 /* QiitaArticleModel.swift */,
 				D2993FE62B5A650800B989D9 /* UserModel.swift */,
 				D2993FE42B5A64F400B989D9 /* TagModel.swift */,
+				D2DB98172B77D28F0096EB55 /* MemberStatus.swift */,
+				D28CABE52B779D5B00E33C18 /* MemberModel.swift */,
 				D28CABCE2B775E0E00E33C18 /* AuthModel.swift */,
 			);
 			path = Model;
@@ -561,36 +596,43 @@
 				D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */,
 				D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */,
 				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
+				D277DAFD2B77C19A00FE2E89 /* ProfileImageView.swift in Sources */,
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
 				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
 				EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */,
-				EAC193542B7750FE0025CF3C /* PraisingViewController.swift in Sources */,
+				D28CABE82B779D7C00E33C18 /* MemberListViewModel.swift in Sources */,
+				D28CABF52B77B94100E33C18 /* PraisingViewController.swift in Sources */,
 				D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
 				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
 				D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */,
+				D28CABEC2B779DF200E33C18 /* UserAPI.swift in Sources */,
 				D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */,
-				EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */,
+				D28CABFD2B77BC8800E33C18 /* PraisedRepository.swift in Sources */,
 				D28CABCF2B775E0E00E33C18 /* AuthModel.swift in Sources */,
 				D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */,
 				EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */,
 				D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */,
+				D28CABF92B77BB6400E33C18 /* MemberListViewController.swift in Sources */,
 				D2993FDE2B5A63D400B989D9 /* TagEntity.swift in Sources */,
 				D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */,
 				D28CABE02B779A1500E33C18 /* ExtraPraisingViewController.swift in Sources */,
 				D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */,
+				D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
 				EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */,
+				D28CABE62B779D5B00E33C18 /* MemberModel.swift in Sources */,
 				EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */,
 				EAAB54AD2B774C3A00B5E138 /* StackCollectionViewCell.swift in Sources */,
 				D28CABCD2B775DA900E33C18 /* AuthRepository.swift in Sources */,
+				D28CABEE2B779E1400E33C18 /* MemberEntity.swift in Sources */,
 				D28CABD52B7765E800E33C18 /* AuthTokenStore.swift in Sources */,
 				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
 				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
@@ -600,7 +642,9 @@
 				D2993FE72B5A650800B989D9 /* UserModel.swift in Sources */,
 				EAC1935C2B7756B00025CF3C /* PraisedViewController.swift in Sources */,
 				EAC1935A2B7755180025CF3C /* Then.swift in Sources */,
+				D28CABEA2B779DBF00E33C18 /* UserRepository.swift in Sources */,
 				EAAB54AC2B774C3A00B5E138 /* StackView.swift in Sources */,
+				D28CABFB2B77BC2E00E33C18 /* PraisingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,3 +42,26 @@ extension AuthEntity {
         return AuthModel(accessToken: accessToken)
     }
 }
+
+extension MemberEntity {
+    func toModel() -> MemberModel {
+        return MemberModel(
+            id: id,
+            name: name,
+            profileImageUri: profileImageUri,
+            status: status.toMemberStatus()
+        )
+    }
+}
+
+extension String {
+    func toMemberStatus() -> MemberStatus {
+        switch self {
+        case "waiting": .waiting
+        case "submitter": .submitter
+        case "praised": .praised
+        case "others": .others
+        default: .unknown
+        }
+    }
+}
