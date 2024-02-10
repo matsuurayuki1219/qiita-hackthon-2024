@@ -135,7 +135,7 @@ private extension PraisingViewController {
     
     func addConstraint() {
         
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
