@@ -50,6 +50,9 @@ class ViewController: UIViewController {
     @objc func goToPraising() {
         let vc = PraisingViewController()
         let nav = UINavigationController(rootViewController: vc)
+        nav.isNavigationBarHidden = true
+        nav.modalTransitionStyle = .crossDissolve
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
     }
 

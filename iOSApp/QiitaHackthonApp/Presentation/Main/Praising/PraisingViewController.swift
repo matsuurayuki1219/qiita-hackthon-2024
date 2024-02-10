@@ -2,92 +2,169 @@
 //  PraisingViewController.swift
 //  QiitaHackthonApp
 //
-//  Created by HONG JEONGSEOB on 2024/02/10.
+//  Created by 松浦裕久 on 2024/02/10.
 //
 
 import UIKit
 
 class PraisingViewController: UIViewController {
+    
+    let viewModel = PraisingViewModel()
+    
+    private lazy var titleLabel: UILabel = {
+        let view = UILabel()
+        view.text = "My Turn"
+        view.font = .systemFont(ofSize: 25)
+        view.textColor = UIColor("#FFFFFF")
+        view.textAlignment = .center
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var subTitleLabel: UILabel = {
+        let view = UILabel()
+        view.text = "他人のいいところを\nシェアするターンです"
+        view.font = .systemFont(ofSize: 25, weight: .bold)
+        view.textColor = UIColor("#F8BD32")
+        view.textAlignment = .center
+        view.numberOfLines = 2
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var selectNiceGuyButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("素敵人を選ぶ", for: .normal)
+        button.setTitleColor(UIColor("#FFFFFF"), for: .normal)
+        button.addTarget(self, action: #selector(selectNiceGuysButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 8.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor("#FFFFFF").cgColor
+        return button
+    }()
+    
+    private lazy var profileImageView: ProfileImageView = {
+        let view = ProfileImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectNiceGuysButtonTapped))
+        view.addGestureRecognizer(tapGesture)
+        return view
+    }()
+    
+    private lazy var textField: UITextView = {
+        let view = UITextView()
+        view.backgroundColor = UIColor("#333333")
+        view.layer.cornerRadius = 15
+        view.textColor = UIColor("#C8C8C8")
+        view.font = .systemFont(ofSize: 16)
+        view.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var uploadButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("バトンをつなぐ", for: .normal)
+        button.setTitleColor(UIColor("#292929"), for: .normal)
+        button.backgroundColor = UIColor("#F8BD32")
+        button.addTarget(self, action: #selector(uploadButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 30.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    var member: MemberModel? {
+        didSet {
+            guard let member = member else { return }
+            profileImageView.nameLabel.text = member.name
+            profileImageView.profileImageView.loadURL(URL(string: member.profileImageUri)!)
 
-    // MARK: - Subview
-
-    lazy var topTitle = UILabel().then { v in
-        v.text = "My Turn"
-        v.textColor = .white
-        v.font = .boldSystemFont(ofSize: 25)
+            profileImageView.isHidden = false
+            selectNiceGuyButton.isHidden = true
+            profileImageView.setNeedsLayout()
+        }
     }
-
-    lazy var subtitle = UILabel().then { v in
-        v.text = "他人のいいところを\nシェアするターンです"
-        v.textAlignment = .center
-        v.textColor = UIColor("#F8BD32")
-        v.font = .boldSystemFont(ofSize: 25)
-        v.numberOfLines = 2
-    }
-
-    lazy var complimentTargetButton = UIButton().then { v in
-        v.setTitle("素敵人を選ぶ", for: .normal)
-        v.setTitleColor(.white, for: .normal)
-        v.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        v.layer.borderWidth = 1
-        v.layer.borderColor = UIColor.gray40.cgColor
-        v.layer.cornerRadius = 8
-        v.addTarget(self, action: #selector(tappedComplimentTargetButton), for: .touchUpInside)
-    }
-
-    lazy var complimentText = UITextView().then { v in
-        v.backgroundColor = UIColor("#333333")
-        v.layer.cornerRadius = 15
-    }
-
-    lazy var complimentSubmitButton = UIButton().then { v in
-        v.setTitle("投稿する", for: .normal)
-        v.setTitleColor(.black, for: .normal)
-        v.titleLabel?.font = .boldSystemFont(ofSize: 16)
-
-        v.backgroundColor = UIColor("#CCCCCC")
-        v.layer.cornerRadius = 30
-        v.addTarget(self, action: #selector(tappedComplimentSubmitButton), for: .touchUpInside)
-    }
-
-    private lazy var contentStack = Stack(.vertical).then { v in
-        v.spacer = .fixed(30)
-        v.position.y = 0
-        v.insets = .init(top: 40, left: 20, bottom: 0, right: 20)
-        v.items = [
-            topTitle.stackItem(),
-            subtitle.stackItem(),
-            complimentTargetButton.stackItem(width: .fixed(320), height: .fixed(80)),
-            complimentText.stackItem(width: .fixed(320), height: .fixed(250)),
-            complimentSubmitButton.stackItem(width: .fixed(260), height: .fixed(60)),
-        ]
-    }
-
-    // MARK: - override ViewController
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor("#292929")
+        view.addSubview(titleLabel)
+        view.addSubview(subTitleLabel)
+        view.addSubview(selectNiceGuyButton)
+        view.addSubview(profileImageView)
+        view.addSubview(textField)
+        view.addSubview(uploadButton)
+        addConstraint()
+        registerKeyboardEvent()
 
-        title = "ComplimentViewController"
-
-        view.backgroundColor = .black
-
-        contentStack.views.forEach(view.addSubview)
+        profileImageView.isHidden = true
+        selectNiceGuyButton.isHidden = false
     }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-
-        contentStack.layout(in: view.bounds)
+    
+    @objc func selectNiceGuysButtonTapped() {
+        let vc = MemberListViewController()
+        vc.onSelectedGuys = { member in
+            self.member = member
+        }
+        present(vc, animated: true)
     }
-
-    // MARK: - Action
-
-    @objc func tappedComplimentTargetButton(_ sender: UIControl) {
-        print(#function)
+    
+    @objc func uploadButtonTapped() {
+        guard let text = textField.text else { return }
+        guard let member = member else { return }
+        viewModel.upload(toUserId: member.id, text: text)
     }
-
-    @objc func tappedComplimentSubmitButton(_ sender: UIControl) {
-        print(#function)
+    
+    func registerKeyboardEvent() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboardTouchOutside)
+        )
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
+    
+    @objc private func dismissKeyboardTouchOutside() {
+        view.endEditing(true)
+    }
+    
 }
+
+private extension PraisingViewController {
+    
+    func addConstraint() {
+        
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30).isActive = true
+        subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        selectNiceGuyButton.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 40).isActive = true
+        selectNiceGuyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28).isActive = true
+        selectNiceGuyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28).isActive = true
+        selectNiceGuyButton.heightAnchor.constraint(equalToConstant: 72.0).isActive = true
+
+        profileImageView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 40).isActive = true
+        profileImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28).isActive = true
+        profileImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 72.0).isActive = true
+
+        textField.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 150).isActive = true
+        textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28).isActive = true
+        textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 210.0).isActive = true
+        
+        uploadButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 30).isActive = true
+        uploadButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28).isActive = true
+        uploadButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28).isActive = true
+        uploadButton.heightAnchor.constraint(equalToConstant: 57.0).isActive = true
+        
+    }
+    
+}
+
+

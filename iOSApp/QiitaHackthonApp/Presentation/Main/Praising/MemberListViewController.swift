@@ -6,21 +6,13 @@
 //
 
 import UIKit
-
-struct Member {
-    var name: String
-    var imageURL: URL?
-}
-
-extension Member {
-    static func dummyData() -> Member {
-        return Member(name: "test", imageURL: URL(string: "https://picsum.photos/200/300"))
-    }
-}
+import Combine
 
 class MemberListViewController: UIViewController {
 
-    var items = [Member]()
+    var onSelectedGuys: ((MemberModel) -> Void)?
+
+    let viewModel = MemberListViewModel()
 
     // MARK: - Subview
 
@@ -48,17 +40,25 @@ class MemberListViewController: UIViewController {
         v.backgroundColor = .clear
     }
 
+    // MARK: - Combine
+
+    private var cancellables: Set<AnyCancellable> = []
+
+    // MARK: - Model
+
+    private var members: [MemberModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "MemberListViewController"
         view.backgroundColor = UIColor("#252525")
-
         view.addSubview(topTitle)
         view.addSubview(closeButton)
         view.addSubview(tableView)
-
-        items = (0...10).map { _ in Member.dummyData() }
+        addObserver()
     }
 
     override func viewWillLayoutSubviews() {
@@ -87,18 +87,34 @@ class MemberListViewController: UIViewController {
             f.size.height = h
         }
     }
+
+    private func addObserver() {
+        viewModel.$members
+            .sink(receiveValue: { members in
+                self.members = members
+            }).store(in: &cancellables)
+
+        viewModel.$isLoading
+            .sink(receiveValue: { isLoading in
+                if isLoading {
+                    // self.indicatorView.startAnimating()
+                } else {
+                    // self.indicatorView.stopAnimating()
+                }
+            }).store(in: &cancellables)
+    }
 }
 
 extension MemberListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        members.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberCell.id, for: indexPath)
 
         if let cell = cell as? MemberCell {
-            cell.item = items[indexPath.row]
+            cell.member = members[indexPath.row]
         }
         return cell
     }
@@ -106,7 +122,9 @@ extension MemberListViewController: UITableViewDataSource {
 
 extension MemberListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(#function)
+        let member = members[indexPath.row]
+        onSelectedGuys?(member)
+        dismiss(animated: true)
     }
 }
 
@@ -115,18 +133,17 @@ extension MemberListViewController {
 
         static let id = "MemberCell"
 
-        var item: Member? {
+        var member: MemberModel? {
             didSet {
-                guard let item = item else { return }
-                // TODO: Add Nuke
-                profileImageNameView.profileImageView.loadURL(item.imageURL)
-                profileImageNameView.nameLabel.text = item.name
+                guard let member = member else { return }
+                profileImageNameView.profileImageView.loadURL(URL(string: member.profileImageUri)!)
+                profileImageNameView.nameLabel.text = member.name
             }
         }
 
         // MARK: - SubViews
 
-        lazy var profileImageNameView = ProfileImageNameView()
+        lazy var profileImageNameView = ProfileImageView()
 
         // MARK: - StackTableViewCell Override
 
@@ -160,38 +177,4 @@ extension MemberListViewController {
         }
     }
 
-    class ProfileImageNameView: StackView {
-
-        // MARK: - SubViews
-
-        lazy var profileImageView = UIImageView().then { v in
-            v.backgroundColor = .gray
-            v.contentMode = .scaleAspectFill
-            v.layer.cornerRadius = 20
-            v.layer.masksToBounds = true
-        }
-
-        lazy var nameLabel = UILabel().then { v in
-            v.font = .boldSystemFont(ofSize: 20)
-            v.textColor = .white
-        }
-
-        override func configure(_ stack: Stack) {
-            stack.direction = .horizontal
-            stack.insets = .init(top: 16, left: 24, bottom: 16, right: 24)
-            stack.spacer = .fixed(16)
-            stack.items = [
-                profileImageView.stackItem(width: .fixed(40), height: .fixed(40)),
-                nameLabel.stackItem(width: .fill)
-            ]
-
-            backgroundView = UIView().then { v in
-                v.layer.borderWidth = 1
-                v.layer.borderColor = UIColor.white.cgColor
-                v.layer.masksToBounds = true
-                v.layer.cornerCurve = .continuous
-                v.layer.cornerRadius = 16
-            }
-        }
-    }
 }
