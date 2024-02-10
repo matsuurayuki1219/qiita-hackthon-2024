@@ -10,14 +10,14 @@ import Then
 
 class ViewController: UIViewController {
 
-    lazy var goToComplimentButton = UIButton().then { v in
-        v.setTitle("goToComplimentButton", for: .normal)
-        v.addTarget(self, action: #selector(goToCompliment), for: .touchUpInside)
+    lazy var goToPraisingButton = UIButton().then { v in
+        v.setTitle("goToPraisingButton", for: .normal)
+        v.addTarget(self, action: #selector(goToPraising), for: .touchUpInside)
     }
 
-    lazy var goToComplimentSharedButton = UIButton().then { v in
-        v.setTitle("goToComplimentSharedButton", for: .normal)
-        v.addTarget(self, action: #selector(goToComplimentShared), for: .touchUpInside)
+    lazy var goToPraisedButton = UIButton().then { v in
+        v.setTitle("goToPraisedButton", for: .normal)
+        v.addTarget(self, action: #selector(goToPraised), for: .touchUpInside)
     }
 
     lazy var goToMemberListViewButton = UIButton().then { v in
@@ -27,8 +27,8 @@ class ViewController: UIViewController {
 
     private lazy var contentStack = Stack(.vertical).then { v in
         v.items = [
-            goToComplimentButton.stackItem(),
-            goToComplimentSharedButton.stackItem(),
+            goToPraisingButton.stackItem(),
+            goToPraisedButton.stackItem(),
             goToMemberListViewButton.stackItem(),
         ]
     }
@@ -47,14 +47,14 @@ class ViewController: UIViewController {
     }
 
 
-    @objc func goToCompliment() {
-        let vc = ComplimentViewController()
+    @objc func goToPraising() {
+        let vc = PraisingViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
     }
 
-    @objc func goToComplimentShared() {
-        let vc = ComplimentSharedViewController()
+    @objc func goToPraised() {
+        let vc = PraisedViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
     }
