@@ -87,6 +87,13 @@ class PraisingViewController: UIViewController {
         return button
     }()
 
+    private lazy var indicatorView = {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     var member: MemberModel? {
         didSet {
             guard let member = member else { return }
@@ -113,6 +120,7 @@ class PraisingViewController: UIViewController {
         view.addSubview(textField)
         view.addSubview(placeholderLabel)
         view.addSubview(uploadButton)
+        view.addSubview(indicatorView)
         addConstraint()
         addObserver()
         registerKeyboardEvent()
@@ -195,6 +203,11 @@ private extension PraisingViewController {
         uploadButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28).isActive = true
         uploadButton.heightAnchor.constraint(equalToConstant: 57.0).isActive = true
 
+        indicatorView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        indicatorView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        indicatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        indicatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
     }
 
     func addObserver() {
@@ -206,6 +219,15 @@ private extension PraisingViewController {
                 print("Failure!!")
             }
         }.store(in: &subscriptions)
+
+        viewModel.$isLoading
+            .sink(receiveValue: { isLoading in
+                if isLoading {
+                    self.indicatorView.startAnimating()
+                } else {
+                    self.indicatorView.stopAnimating()
+                }
+            }).store(in: &subscriptions)
     }
 
     func validateContent() {
