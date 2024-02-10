@@ -12,23 +12,28 @@ struct MessageModel: Hashable {
     var user: MemberModel
 }
 
+@MainActor
 class ExtraPraisingViewModel: ObservableObject {
     let authRepository = AuthRepository()
     let userRepository = UserRepository()
     let praiseRepository = PraiseRepository()
 
+    var praiseId: Int?
+
+    @Published var inputMessage = ""
+
     // user
-    @Published var praisedUser: MemberModel?
-    @Published var praisingUser: MemberModel?
-    @Published var myUser: MemberModel?
+    @Published var praisedUser: MemberModel?  // ✅
+    @Published var praisingUser: MemberModel?  // ✅
+    @Published var myUser: MemberModel? // ✅
 
     // stamp
-    @Published var stamps = [Stamp(reactionStamp: .clap, count: 3), Stamp(reactionStamp: .heart, count: 1),]
+    @Published var stamps: [Stamp] = [] // ✅
 
     // message
-    @Published var praisingUserMessage: MessageModel?
+    @Published var praisingUserMessage: MessageModel? // ✅
     @Published var extraUserMessages: [MessageModel] = []
-    
+
     func prepare() {
         Task {
             do {
@@ -36,19 +41,37 @@ class ExtraPraisingViewModel: ObservableObject {
                 let members = try await userRepository.getMembers()
                 let praiseModel = try await praiseRepository.getCurrentPraise()
 
-                //                myName = me?.name ?? "Bug"
-                //                myImageName = me?.profileImageUri ?? "Bug"
-                //                userName = praiseModel?.toUserId
+                praiseId = praiseModel.id
+                praisedUser = members.first { $0.id == praiseModel.toUserId }
+                praisingUser = members.first { $0.id == praiseModel.fromUserId }
+                myUser = me
 
-//                stamps = praiseModel?.stamps.compactMap { Stamp(reactionStamp: ReactionStamp(rawValue: $0.stamp) ?? .clap, count: $0.count) } ?? []
+                stamps = praiseModel.stamps.compactMap { Stamp(reactionStamp: ReactionStamp(rawValue: $0.stamp) ?? .clap, count: $0.count) }
+
+                if let praisingUser = praisingUser {
+                    praisingUserMessage = MessageModel(message: praiseModel.description, user: praisingUser)
+                }
+
+                extraUserMessages = praiseModel.comments.compactMap { comment in
+                    let user = members.first { $0.id == comment.fromUserId}
+                    return MessageModel(message: comment.comment, user: user!)
+                }
             } catch {
-
+                print(error)
             }
         }
 
     }
     func postComment() {
         // call post comment api
+        guard let praiseId = praiseId else { return }
+        Task {
+            do {
+                try await praiseRepository.putPraise(praiseId: praiseId, comment: inputMessage)
+            } catch {
+                // do nothing
+            }
+        }
         // update extraUserMessages
     }
 

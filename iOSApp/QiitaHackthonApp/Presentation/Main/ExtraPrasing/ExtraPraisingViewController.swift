@@ -17,6 +17,8 @@ class ExtraPraisingViewController: UIViewController {
         super.viewDidLoad()
 
         setBaseSwiftUI()
+
+        viewModel.prepare()
     }
 
     // MARK: - Private

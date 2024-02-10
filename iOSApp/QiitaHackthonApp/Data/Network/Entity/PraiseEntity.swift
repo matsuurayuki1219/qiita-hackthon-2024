@@ -9,7 +9,7 @@ import Foundation
 
 struct PraiseEntity: Codable {
     let id: Int
-    let title: String
+    let description: String
     let toUserId: Int
     let fromUserId: Int
     let comments: [CommentEntity]
@@ -17,7 +17,7 @@ struct PraiseEntity: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case title = "title"
+        case description = "description"
         case toUserId = "to_user_id"
         case fromUserId = "from_user_id"
         case comments = "comments"

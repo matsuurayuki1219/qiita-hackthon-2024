@@ -9,7 +9,7 @@ import Foundation
 
 struct PraiseModel {
     let id: Int
-    let title: String
+    let description: String
     let toUserId: Int
     let fromUserId: Int
     let comments: [CommentModel]
