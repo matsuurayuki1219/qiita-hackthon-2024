@@ -3,14 +3,15 @@ import { User } from 'src/models/user/user';
 
 @Injectable()
 export class UserService {
-  private readonly users: User[] = [];
+  private readonly users: User[] = [
+    {
+      id: 1,
+      name: 'John Doe',
+    },
+  ];
 
-  async register(params: Omit<User, 'id'>): Promise<User> {
-    const id = this.users.length + 1;
-    const user = new User();
-    user.id = id;
-    user.name = params.name;
-    this.users.push(user);
-    return user;
+  async login(params: Omit<User, 'id'>): Promise<User | undefined> {
+    const existUser = this.users.find((user) => user.name === params.name);
+    return existUser;
   }
 }
