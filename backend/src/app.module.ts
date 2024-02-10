@@ -6,6 +6,7 @@ import { AuthService } from './services/auth/auth.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { PraiseService } from './services/praise/praise.service';
 import { PrisesController } from './controllers/praise/praise.controller';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfigService } from './services/database-config/database-config.service';
 
@@ -13,16 +14,13 @@ import { DatabaseConfigService } from './services/database-config/database-confi
   imports: [
     UserModule,
     AuthModule,
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 5432,
-      username: 'root',
-      password: 'h9XG|"I4N<k<LBy]',
-      database: 'qiita',
+    ConfigModule.forRoot({ isGlobal: true }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useClass: DatabaseConfigService,
     }),
   ],
   controllers: [UsersController, PrisesController],
-  providers: [UserService, AuthService, PraiseService, DatabaseConfigService],
+  providers: [UserService, AuthService, PraiseService],
 })
 export class AppModule {}

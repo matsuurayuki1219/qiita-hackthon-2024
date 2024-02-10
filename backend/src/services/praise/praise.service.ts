@@ -1,72 +1,105 @@
 import { Injectable } from '@nestjs/common';
-import { Comment } from 'src/models/comment/comment';
-import { Praise } from 'src/models/praise/praise';
-import { Stamp } from 'src/models/stamp/stamp';
+import { Praise } from 'src/entities/Praise';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from 'src/entities/User';
+import { Comment } from 'src/entities/Comment';
+import { Stamp } from 'src/entities/Stamp';
 
 @Injectable()
 export class PraiseService {
-  constructor() {}
-  private readonly praises: Praise[] = [];
+  constructor(
+    @InjectRepository(Praise)
+    private readonly praiseRepository: Repository<Praise>,
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>,
+    @InjectRepository(Comment)
+    private readonly commentRepository: Repository<Comment>,
+    @InjectRepository(Stamp)
+    private readonly stampRepository: Repository<Stamp>,
+  ) {}
 
-  async postPraise(
-    body: Omit<Praise, 'id' | 'comments' | 'stamps'>,
-  ): Promise<Praise> {
+  async postPraise(body: {
+    description: string;
+    from_user_id: number;
+    to_user_id: number;
+  }): Promise<Praise> {
     const praise = new Praise();
-    praise.id = this.praises.length + 1;
-    praise.title = body.title;
     praise.description = body.description;
-    praise.from_user_id = body.from_user_id;
-    praise.to_user_id = body.to_user_id;
-    praise.comments = [];
-    praise.stamps = [];
-    this.praises.push(praise);
-    return praise;
+    praise.fromUser = await this.userRepository.findOneByOrFail({
+      id: body.from_user_id,
+    });
+    praise.toUser = await this.userRepository.findOneByOrFail({
+      id: body.to_user_id,
+    });
+    return await this.praiseRepository.save(praise);
   }
 
-  async getCurrentPraise(): Promise<Praise | undefined> {
-    return this.praises[this.praises.length - 1];
+  async getCurrentPraise(): Promise<Praise> {
+    return await this.praiseRepository.findOneOrFail({
+      order: { id: 'DESC' },
+    });
   }
 
-  async findById(id: number): Promise<Praise | undefined> {
-    return this.praises.find((praise) => praise.id === id);
+  async findById(id: number): Promise<Praise | null> {
+    return await this.praiseRepository.findOneBy({ id });
   }
 
   async putComment(
-    praise: Praise,
-    comment: Omit<Comment, 'id'>,
+    praise_id: Praise['id'],
+    comment: {
+      from_user_id: number;
+      comment: string;
+    },
   ): Promise<Comment> {
-    const existComment = praise.comments.find(
-      (item) => item.from_user_id === comment.from_user_id,
-    );
+    const praise = await this.praiseRepository.findOneByOrFail({
+      id: praise_id,
+    });
+    const fromUser = await this.userRepository.findOneByOrFail({
+      id: comment.from_user_id,
+    });
+    const existComment = await this.commentRepository.findOneBy({
+      praise,
+      fromUser,
+    });
     if (existComment != null) {
       existComment.comment = comment.comment;
-      return existComment;
+      return await this.commentRepository.save(existComment);
     }
     const newComment = new Comment();
-    newComment.id = praise.comments.length + 1;
     newComment.comment = comment.comment;
-    newComment.from_user_id = comment.from_user_id;
+    newComment.praise = praise;
+    newComment.fromUser = fromUser;
 
-    praise.comments.push(newComment);
-
-    return newComment;
+    return await this.commentRepository.save(newComment);
   }
 
-  async putStamp(praise: Praise, stamp: Omit<Stamp, 'id'>): Promise<Stamp> {
-    const existStamp = praise.stamps.find(
-      (item) => item.from_user_id === stamp.from_user_id,
-    );
+  async putStamp(
+    praise_id: Praise['id'],
+    stamp: {
+      from_user_id: number;
+      stamp: string;
+    },
+  ): Promise<Stamp> {
+    const praise = await this.praiseRepository.findOneByOrFail({
+      id: praise_id,
+    });
+    const fromUser = await this.userRepository.findOneByOrFail({
+      id: stamp.from_user_id,
+    });
+    const existStamp = await this.stampRepository.findOneBy({
+      praise,
+      fromUser,
+    });
     if (existStamp != null) {
       existStamp.stamp = stamp.stamp;
-      return existStamp;
+      return await this.stampRepository.save(existStamp);
     }
     const newStamp = new Stamp();
-    newStamp.id = praise.stamps.length + 1;
     newStamp.stamp = stamp.stamp;
-    newStamp.from_user_id = stamp.from_user_id;
+    newStamp.praise = praise;
+    newStamp.fromUser = fromUser;
 
-    praise.stamps.push(newStamp);
-
-    return newStamp;
+    return await this.stampRepository.save(newStamp);
   }
 }

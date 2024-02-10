@@ -1,55 +1,39 @@
 import { Injectable } from '@nestjs/common';
-import { User } from 'src/models/user/user';
+import { InjectRepository } from '@nestjs/typeorm';
+import { User } from 'src/entities/User';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
-  private users: User[] = [
-    {
-      id: 1,
-      name: 'John Doe',
-      status: 'submitter',
-      image_url:
-        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
-    },
-    {
-      id: 2,
-      name: 'Hans Müller',
-      status: 'waiting',
-      image_url:
-        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
-    },
-    {
-      id: 3,
-      name: 'Alice Schmidt',
-      status: 'waiting',
-      image_url:
-        'https://storage.cloud.google.com/qiita_hackthon_2024/IMGP3906_1_1.png',
-    },
-  ];
+  constructor(
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>,
+  ) {}
 
-  async findUserByName(params: Pick<User, 'name'>): Promise<User | undefined> {
-    const existUser = this.users.find((user) => user.name === params.name);
+  async findUserByName(params: Pick<User, 'name'>): Promise<User | null> {
+    const existUser = await this.userRepository.findOneBy({
+      name: params.name,
+    });
     return existUser;
   }
 
-  async findUserById(id: number): Promise<User | undefined> {
-    const existUser = this.users.find((user) => user.id === id);
+  async findUserById(id: number): Promise<User | null> {
+    const existUser = await this.userRepository.findOneBy({ id });
     return existUser;
   }
 
   async getUsers(): Promise<User[]> {
-    return this.users;
+    return this.userRepository.find();
   }
 
   async switchStatus(praised_user_id: number): Promise<void> {
-    // TODO: nestjsはおそらくCGIなので、GB接続しないと変わらない
-    this.users = this.users.map((user) => {
-      if (user.id === praised_user_id) {
-        user.status = 'praised';
-      } else {
-        user.status = 'others';
-      }
-      return user;
-    });
+    await this.userRepository
+      .createQueryBuilder()
+      .update()
+      .set({
+        status: () =>
+          `CASE WHEN id = ${praised_user_id} THEN 'praised' ELSE 'others' END`,
+      })
+      .execute();
   }
 }

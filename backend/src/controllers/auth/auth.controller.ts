@@ -14,11 +14,11 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/auth-guard/auth-guard.guard';
-import { User } from 'src/models/user/user';
 import { LoginRequest } from 'src/request_models/login-request/login-request';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
 import { AuthService } from 'src/services/auth/auth.service';
 import { LoginResponse } from 'src/view_models/login-response/login-response';
+import { UserResponse } from 'src/view_models/user-response/user-response';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -41,9 +41,9 @@ export class AuthController {
   @ApiOperation({ summary: '自分の情報を取得' })
   @ApiOkResponse({
     description: 'The record has been successfully created.',
-    type: User,
+    type: UserResponse,
   })
   getMe(@Request() req: PrivateRequest) {
-    return req.user;
+    return UserResponse.fromEntity(req.user);
   }
 }
