@@ -17,6 +17,7 @@ async function bootstrap() {
     .setTitle('Qiita Hackthon 2024')
     .setDescription('The API description')
     .setVersion('0.0')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);

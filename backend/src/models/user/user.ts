@@ -5,4 +5,6 @@ export class User {
   id: number;
   @ApiProperty({ example: 'John Doe', description: 'The name of the User' })
   name: string;
+  @ApiProperty({ example: 'submitter', description: 'The status of the User' })
+  status: 'submitter' | 'waiting' | 'praised' | 'others';
 }

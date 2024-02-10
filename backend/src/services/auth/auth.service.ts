@@ -11,7 +11,7 @@ export class AuthService {
   ) {}
 
   async login(username: string): Promise<LoginResponse> {
-    const user = await this.userService.findUser({ name: username });
+    const user = await this.userService.findUserByName({ name: username });
     if (user == null) {
       throw new UnauthorizedException();
     }
