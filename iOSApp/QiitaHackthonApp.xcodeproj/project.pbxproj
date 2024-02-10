@@ -61,6 +61,11 @@
 		EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549D2B774C3A00B5E138 /* StackDebugView.swift */; };
 		EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549E2B774C3A00B5E138 /* StackTableViewCell.swift */; };
 		EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */; };
+		EABA347E2B77DB9D008B18CD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EABA347D2B77DB9D008B18CD /* Lottie */; };
+		EABA34802B77DEC6008B18CD /* ExtraPraisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA347F2B77DEC6008B18CD /* ExtraPraisingView.swift */; };
+		EABA34822B77DECB008B18CD /* ExtraPraisingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34812B77DECB008B18CD /* ExtraPraisingViewModel.swift */; };
+		EABA34842B77DFC0008B18CD /* PlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34832B77DFC0008B18CD /* PlusView.swift */; };
+		EABA34862B77DFDC008B18CD /* StampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA34852B77DFDC008B18CD /* StampView.swift */; };
 		EAC193502B774E2A0025CF3C /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */; };
 		EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC193512B774E450025CF3C /* UIView+Layout.swift */; };
 		EAC193582B7752590025CF3C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EAC193572B7752590025CF3C /* Then */; };
@@ -149,6 +154,10 @@
 		EAAB549D2B774C3A00B5E138 /* StackDebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackDebugView.swift; sourceTree = "<group>"; };
 		EAAB549E2B774C3A00B5E138 /* StackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewCell.swift; sourceTree = "<group>"; };
 		EAAB549F2B774C3A00B5E138 /* StackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
+		EABA347F2B77DEC6008B18CD /* ExtraPraisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPraisingView.swift; sourceTree = "<group>"; };
+		EABA34812B77DECB008B18CD /* ExtraPraisingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPraisingViewModel.swift; sourceTree = "<group>"; };
+		EABA34832B77DFC0008B18CD /* PlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusView.swift; sourceTree = "<group>"; };
+		EABA34852B77DFDC008B18CD /* StampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampView.swift; sourceTree = "<group>"; };
 		EAC1934F2B774E2A0025CF3C /* Comparable+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
 		EAC193512B774E450025CF3C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		EAC193592B7755180025CF3C /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
@@ -168,6 +177,7 @@
 				EAC1936B2B7768600025CF3C /* Nuke in Frameworks */,
 				D26EC0672B5B9D8300DC407B /* UIColorHexSwift in Frameworks */,
 				EAC193582B7752590025CF3C /* Then in Frameworks */,
+				EABA347E2B77DB9D008B18CD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				D28CABDF2B779A1500E33C18 /* ExtraPraisingViewController.swift */,
+				EABA347F2B77DEC6008B18CD /* ExtraPraisingView.swift */,
+				EABA34812B77DECB008B18CD /* ExtraPraisingViewModel.swift */,
 			);
 			path = ExtraPrasing;
 			sourceTree = "<group>";
@@ -246,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				D277DAFC2B77C19A00FE2E89 /* ProfileImageView.swift */,
+				EABA34832B77DFC0008B18CD /* PlusView.swift */,
+				EABA34852B77DFDC008B18CD /* StampView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -480,6 +494,7 @@
 				D26EC0662B5B9D8300DC407B /* UIColorHexSwift */,
 				EAC193572B7752590025CF3C /* Then */,
 				EAC1936A2B7768600025CF3C /* Nuke */,
+				EABA347D2B77DB9D008B18CD /* Lottie */,
 			);
 			productName = QiitaHackthonApp;
 			productReference = D2AC68092B5A23CB00EE5D38 /* QiitaHackthonApp.app */;
@@ -557,6 +572,7 @@
 				D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
 				EAC193562B7752590025CF3C /* XCRemoteSwiftPackageReference "Then" */,
 				EAC193692B7768600025CF3C /* XCRemoteSwiftPackageReference "Nuke" */,
+				EABA347C2B77DB9D008B18CD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = D2AC680A2B5A23CB00EE5D38 /* Products */;
 			projectDirPath = "";
@@ -611,10 +627,12 @@
 				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
 				EAD463242B779C9300A8EF9D /* PraisedViewModel.swift in Sources */,
+				EABA34802B77DEC6008B18CD /* ExtraPraisingView.swift in Sources */,
 				EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */,
 				EAD463262B779CC400A8EF9D /* PraisedView.swift in Sources */,
 				D28CABE82B779D7C00E33C18 /* MemberListViewModel.swift in Sources */,
 				D28CABF52B77B94100E33C18 /* PraisingViewController.swift in Sources */,
+				EABA34842B77DFC0008B18CD /* PlusView.swift in Sources */,
 				D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
 				D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */,
@@ -634,8 +652,10 @@
 				D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */,
 				D28CABE02B779A1500E33C18 /* ExtraPraisingViewController.swift in Sources */,
 				D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */,
+				EABA34822B77DECB008B18CD /* ExtraPraisingViewModel.swift in Sources */,
 				D2DB98182B77D28F0096EB55 /* MemberStatus.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
+				EABA34862B77DFDC008B18CD /* StampView.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
 				EAAB54A92B774C3A00B5E138 /* StackTableViewHeaderFooterView.swift in Sources */,
@@ -1001,6 +1021,14 @@
 				minimumVersion = 5.1.9;
 			};
 		};
+		EABA347C2B77DB9D008B18CD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
 		EAC193562B7752590025CF3C /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1024,6 +1052,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D26EC0652B5B9D8300DC407B /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
 			productName = UIColorHexSwift;
+		};
+		EABA347D2B77DB9D008B18CD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EABA347C2B77DB9D008B18CD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		EAC193572B7752590025CF3C /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
