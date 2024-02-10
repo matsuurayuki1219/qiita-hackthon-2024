@@ -87,14 +87,6 @@ export class PraiseService {
     const fromUser = await this.userRepository.findOneByOrFail({
       id: stamp.from_user_id,
     });
-    const existStamp = await this.stampRepository.findOneBy({
-      praise,
-      fromUser,
-    });
-    if (existStamp != null) {
-      existStamp.stamp = stamp.stamp;
-      return await this.stampRepository.save(existStamp);
-    }
     const newStamp = new Stamp();
     newStamp.stamp = stamp.stamp;
     newStamp.praise = praise;
