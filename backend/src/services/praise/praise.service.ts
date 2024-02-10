@@ -35,9 +35,9 @@ export class PraiseService {
     return await this.praiseRepository.save(praise);
   }
 
-  async getCurrentPraise(): Promise<Praise> {
-    return await this.praiseRepository.findOneOrFail({
-      order: { id: 'DESC' },
+  async getCurrentPraise(): Promise<Praise | null> {
+    return await this.praiseRepository.find().then((praises) => {
+      return praises?.[0] ?? null;
     });
   }
 
