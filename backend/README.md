@@ -5,7 +5,8 @@ Qiita hackthon 2024.
 ## Installation
 
 ```bash
-$ yarn install
+cp .env.example .env
+yarn install
 ```
 
 ## Running the app
