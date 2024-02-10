@@ -3,7 +3,9 @@ import {
   Controller,
   Get,
   NotFoundException,
+  Param,
   Post,
+  Put,
   Request,
   UseGuards,
 } from '@nestjs/common';
@@ -17,7 +19,9 @@ import {
 import { AuthGuard } from 'src/auth/auth-guard/auth-guard.guard';
 import { PostPriseRequest } from 'src/equest-models/post-prise-request/post-prise-request';
 import { Praise } from 'src/models/praise/praise';
+import { Reaction } from 'src/models/reaction/reaction';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
+import { PutReaction } from 'src/request_models/put-reaction/put-reaction';
 import { PraiseService } from 'src/services/praise/praise.service';
 
 @ApiBearerAuth()
@@ -58,5 +62,27 @@ export class PrisesController {
       throw new NotFoundException();
     }
     return currentPraise;
+  }
+
+  @Put('/:praise_id/reactions')
+  @ApiCreatedResponse({
+    type: Reaction,
+  })
+  @ApiNotFoundResponse()
+  async putReaction(
+    @Request() req: PrivateRequest,
+    @Param('praise_id') praise_id: number,
+    @Body() body: PutReaction,
+  ) {
+    const praise = await this.priseService.findById(Number(praise_id));
+    if (praise == null) {
+      throw new NotFoundException();
+    }
+    const from_user_id = req.user.id;
+    return this.priseService.putReaction(praise, {
+      from_user_id: from_user_id,
+      comment: body.comment,
+      emoji: body.emoji,
+    });
   }
 }

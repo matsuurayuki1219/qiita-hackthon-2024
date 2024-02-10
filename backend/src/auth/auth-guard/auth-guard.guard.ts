@@ -6,10 +6,14 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
+import { UserService } from 'src/services/user/user.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private jwtService: JwtService) {}
+  constructor(
+    private jwtService: JwtService,
+    private userService: UserService,
+  ) {}
   canActivate(
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
@@ -20,8 +24,13 @@ export class AuthGuard implements CanActivate {
     }
     try {
       const payload = this.jwtService.verify(token, { secret: 'secretKey' });
+      const user = this.userService.findUserById(payload.sub);
 
-      request['user'] = payload;
+      if (user == null) {
+        throw new UnauthorizedException();
+      }
+
+      request['user'] = user;
     } catch {
       throw new UnauthorizedException();
     }

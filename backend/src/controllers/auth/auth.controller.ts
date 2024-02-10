@@ -4,7 +4,6 @@ import {
   Get,
   Post,
   Request,
-  UnauthorizedException,
   UseGuards,
 } from '@nestjs/common';
 import {
@@ -19,16 +18,12 @@ import { User } from 'src/models/user/user';
 import { LoginRequest } from 'src/request_models/login-request/login-request';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
 import { AuthService } from 'src/services/auth/auth.service';
-import { UserService } from 'src/services/user/user.service';
 import { LoginResponse } from 'src/view_models/login-response/login-response';
 
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(
-    private authService: AuthService,
-    private userService: UserService,
-  ) {}
+  constructor(private authService: AuthService) {}
 
   @Post('login')
   @ApiOperation({ summary: 'ユーザー登録' })
@@ -49,11 +44,6 @@ export class AuthController {
     type: User,
   })
   getMe(@Request() req: PrivateRequest) {
-    // TODO: anyを使わないように修正
-    const user = this.userService.findUserById((req.user as any).sub);
-    if (user == null) {
-      throw new UnauthorizedException();
-    }
-    return user;
+    return req.user;
   }
 }
