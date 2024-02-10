@@ -12,6 +12,14 @@
 		D26EC0722B5BA1A300DC407B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D26EC0712B5BA1A300DC407B /* Localizable.strings */; };
 		D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5D2B5A7E3400F012BC /* ApiError.swift */; };
 		D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */; };
+		D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABC82B7754C500E33C18 /* LoginViewController.swift */; };
+		D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABCA2B7754CE00E33C18 /* LoginViewModel.swift */; };
+		D28CABCD2B775DA900E33C18 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABCC2B775DA900E33C18 /* AuthRepository.swift */; };
+		D28CABCF2B775E0E00E33C18 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABCE2B775E0E00E33C18 /* AuthModel.swift */; };
+		D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD02B775E5A00E33C18 /* AuthEntity.swift */; };
+		D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD22B775F0300E33C18 /* AuthAPI.swift */; };
+		D28CABD52B7765E800E33C18 /* AuthTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD42B7765E800E33C18 /* AuthTokenStore.swift */; };
+		D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CABD72B7767DD00E33C18 /* RootViewController.swift */; };
 		D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */; };
 		D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */; };
 		D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */; };
@@ -74,6 +82,14 @@
 		D26EC0712B5BA1A300DC407B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2759E5D2B5A7E3400F012BC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaRepository.swift; sourceTree = "<group>"; };
+		D28CABC82B7754C500E33C18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D28CABCA2B7754CE00E33C18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D28CABCC2B775DA900E33C18 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		D28CABCE2B775E0E00E33C18 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		D28CABD02B775E5A00E33C18 /* AuthEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEntity.swift; sourceTree = "<group>"; };
+		D28CABD22B775F0300E33C18 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		D28CABD42B7765E800E33C18 /* AuthTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenStore.swift; sourceTree = "<group>"; };
+		D28CABD72B7767DD00E33C18 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D2993FD02B5A54AC00B989D9 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
 		D2993FD22B5A54B600B989D9 /* QiitaArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewModel.swift; sourceTree = "<group>"; };
 		D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleEntity.swift; sourceTree = "<group>"; };
@@ -144,6 +160,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D28CABC72B7754A700E33C18 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D28CABC82B7754C500E33C18 /* LoginViewController.swift */,
+				D28CABCA2B7754CE00E33C18 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D28CABD62B7767CE00E33C18 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				D28CABD72B7767DD00E33C18 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		D2993FCA2B5A543100B989D9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +193,7 @@
 			children = (
 				D2759E5D2B5A7E3400F012BC /* ApiError.swift */,
 				D2993FF22B5A72FB00B989D9 /* QiitaAPI.swift */,
+				D28CABD22B775F0300E33C18 /* AuthAPI.swift */,
 				D2993FCD2B5A545200B989D9 /* Entity */,
 				D2993FF02B5A6D2B00B989D9 /* EndPoint.swift */,
 			);
@@ -170,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D2759E5F2B5A7F9700F012BC /* QiitaRepository.swift */,
+				D28CABCC2B775DA900E33C18 /* AuthRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -177,6 +212,7 @@
 		D2993FCD2B5A545200B989D9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				D28CABD02B775E5A00E33C18 /* AuthEntity.swift */,
 				D2993FDA2B5A63A900B989D9 /* QiitaArticleEntity.swift */,
 				D2993FDF2B5A63EB00B989D9 /* UserEntity.swift */,
 				D2993FDD2B5A63D400B989D9 /* TagEntity.swift */,
@@ -188,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				EAC193552B7751040025CF3C /* ComplimentRelay */,
+				D28CABD62B7767CE00E33C18 /* Root */,
+				D28CABC72B7754A700E33C18 /* Login */,
 				D2993FD42B5A54D700B989D9 /* Utility */,
 				D2993FCF2B5A549C00B989D9 /* QiitaArticle */,
 			);
@@ -222,16 +260,9 @@
 		D2993FD62B5A55A800B989D9 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				D2993FD72B5A55B000B989D9 /* Entity */,
+				D28CABD42B7765E800E33C18 /* AuthTokenStore.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		D2993FD72B5A55B000B989D9 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		D2993FD92B5A585700B989D9 /* Resource */ = {
@@ -250,6 +281,7 @@
 				D2993FE22B5A64E000B989D9 /* QiitaArticleModel.swift */,
 				D2993FE62B5A650800B989D9 /* UserModel.swift */,
 				D2993FE42B5A64F400B989D9 /* TagModel.swift */,
+				D28CABCE2B775E0E00E33C18 /* AuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,23 +521,29 @@
 			files = (
 				D2993FD12B5A54AC00B989D9 /* QiitaArticleViewController.swift in Sources */,
 				D2AC68112B5A23CB00EE5D38 /* ViewController.swift in Sources */,
+				D28CABD82B7767DD00E33C18 /* RootViewController.swift in Sources */,
 				D2993FE52B5A64F400B989D9 /* TagModel.swift in Sources */,
 				D2993FF12B5A6D2B00B989D9 /* EndPoint.swift in Sources */,
 				EAAB54AE2B774C3A00B5E138 /* StackControl.swift in Sources */,
+				D28CABC92B7754C500E33C18 /* LoginViewController.swift in Sources */,
 				EAAB54AA2B774C3A00B5E138 /* StackButton.swift in Sources */,
 				EAC1936F2B7769690025CF3C /* UIView+CustomAnimation.swift in Sources */,
 				EAC193542B7750FE0025CF3C /* ComplimentViewController.swift in Sources */,
+				D28CABD12B775E5A00E33C18 /* AuthEntity.swift in Sources */,
 				D2AC680D2B5A23CB00EE5D38 /* AppDelegate.swift in Sources */,
+				D28CABCB2B7754CE00E33C18 /* LoginViewModel.swift in Sources */,
 				D2AC680F2B5A23CB00EE5D38 /* SceneDelegate.swift in Sources */,
 				D2993FF32B5A72FB00B989D9 /* QiitaAPI.swift in Sources */,
 				D2993FE32B5A64E000B989D9 /* QiitaArticleModel.swift in Sources */,
 				D26EC06A2B5B9DC600DC407B /* UIColor+Util.swift in Sources */,
 				EAC1935E2B77579D0025CF3C /* MemberListViewController.swift in Sources */,
+				D28CABCF2B775E0E00E33C18 /* AuthModel.swift in Sources */,
 				D2759E602B5A7F9700F012BC /* QiitaRepository.swift in Sources */,
 				EAC193522B774E450025CF3C /* UIView+Layout.swift in Sources */,
 				D2759E5E2B5A7E3400F012BC /* ApiError.swift in Sources */,
 				D2993FDE2B5A63D400B989D9 /* TagEntity.swift in Sources */,
 				D2993FDB2B5A63A900B989D9 /* QiitaArticleEntity.swift in Sources */,
+				D28CABD32B775F0300E33C18 /* AuthAPI.swift in Sources */,
 				D2993FD32B5A54B600B989D9 /* QiitaArticleViewModel.swift in Sources */,
 				EAAB54B02B774C3A00B5E138 /* StackTableViewCell.swift in Sources */,
 				EAAB54AF2B774C3A00B5E138 /* StackDebugView.swift in Sources */,
@@ -513,6 +551,8 @@
 				EAAB54AB2B774C3A00B5E138 /* Stack.swift in Sources */,
 				EAC1936D2B7768800025CF3C /* UIImageView+Nuke.swift in Sources */,
 				EAAB54AD2B774C3A00B5E138 /* StackCollectionViewCell.swift in Sources */,
+				D28CABCD2B775DA900E33C18 /* AuthRepository.swift in Sources */,
+				D28CABD52B7765E800E33C18 /* AuthTokenStore.swift in Sources */,
 				D2993FE02B5A63EB00B989D9 /* UserEntity.swift in Sources */,
 				D2993FE92B5A654100B989D9 /* Converter.swift in Sources */,
 				EAAB54B12B774C3A00B5E138 /* StackScrollView.swift in Sources */,
