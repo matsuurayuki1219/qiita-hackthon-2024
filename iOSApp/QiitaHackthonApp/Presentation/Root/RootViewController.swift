@@ -17,7 +17,7 @@ class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if UserDefaults.accessToken != nil {
-            let vc = ViewController()
+            let vc = MainViewController()
             let nav = UINavigationController(rootViewController: vc)
             nav.isNavigationBarHidden = true
             nav.modalTransitionStyle = .crossDissolve
