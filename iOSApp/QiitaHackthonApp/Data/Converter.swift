@@ -36,3 +36,9 @@ extension TagEntity {
         return TagModel(name: name)
     }
 }
+
+extension AuthEntity {
+    func toModel() -> AuthModel {
+        return AuthModel(accessToken: accessToken)
+    }
+}
