@@ -39,7 +39,8 @@ export class PraiseService {
 
   async getCurrentPraise(): Promise<Praise | null> {
     return await this.praiseRepository.find().then((praises) => {
-      return praises?.[0] ?? null;
+      const size = praises?.length ?? 0;
+      return praises?.[size - 1] ?? null;
     });
   }
 
