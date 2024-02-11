@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PraisedView: View {
     @ObservedObject var viewModel: PraisedViewModel
+    weak var transitionDelegate: PraisedViewTransitionDelegate?
 
     var attributedPraisedUserName: AttributedString {
         var result = AttributedString("\(viewModel.praisedUser?.name ?? "")")
@@ -48,7 +49,7 @@ struct PraisedView: View {
                     Image("solo_body")
                 }
                 Spacer(minLength: 40)
-                Text("\(attributedPraisedUserName)さんの素敵さを\(attributedPraisingUserName)さんが\nみんなにシェアしました")
+                Text("\(attributedPraisedUserName)さんの行動が\n素敵バトンをつなぎました")
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
@@ -99,10 +100,9 @@ struct PraisedView: View {
 
                 Spacer()
                 Button(action: {
-                    print("tap buton")
-                    viewModel.navigateToPraising()
+                    transitionDelegate?.transition(self, transition: .navigateToPraising)
                 }) {
-                    Text("次のバトンへつなぐ").fontWeight(.bold)
+                    Text("バトンをつなぐ").fontWeight(.bold)
                         .padding()
                         .foregroundColor(Color.black108)
                         .background(.yellow)
@@ -118,4 +118,16 @@ struct PraisedView: View {
 
 #Preview {
     PraisedView(viewModel: PraisedViewModel())
+}
+
+// MARK: - Transition Delegate & Action
+
+protocol PraisedViewTransitionDelegate: AnyObject {
+    func transition(_ praisedView: PraisedView, transition: PraisedView.TransitionAction)
+}
+
+extension PraisedView {
+    enum TransitionAction {
+        case navigateToPraising
+    }
 }

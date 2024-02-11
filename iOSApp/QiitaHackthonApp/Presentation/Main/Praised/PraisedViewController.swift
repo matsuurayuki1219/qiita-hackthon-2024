@@ -23,7 +23,8 @@ class PraisedViewController: UIViewController {
     // MARK: - Private
 
     private func setBaseSwiftUI() {
-        let swiftUIView = PraisedView(viewModel: viewModel)
+        var swiftUIView = PraisedView(viewModel: viewModel)
+        swiftUIView.transitionDelegate = self
         let vc = UIHostingController(rootView: swiftUIView)
         addChild(vc)
         view.addSubview(vc.view)
@@ -39,5 +40,20 @@ class PraisedViewController: UIViewController {
 
     private func updateNavigationBar() {
         navigationController?.isNavigationBarHidden = true
+    }
+}
+
+extension PraisedViewController: PraisedViewTransitionDelegate {
+    func transition(_ praisedView: PraisedView, transition: PraisedView.TransitionAction) {
+        switch transition {
+        case .navigateToPraising:
+            navigateToPraising()
+        }
+    }
+
+    private func navigateToPraising() {
+        let vc = PraisingViewController()
+        navigationController?.pushViewController(vc, animated: true)
+//        present(vc, animated: true)
     }
 }

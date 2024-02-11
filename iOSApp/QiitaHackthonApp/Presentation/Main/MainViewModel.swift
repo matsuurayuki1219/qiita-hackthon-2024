@@ -24,11 +24,12 @@ class MainViewModel {
 
     let repository = AuthRepository()
 
-    init() {
+    func prepare() {
         Task {
             do {
                 isLoading = true
                 let data = try await repository.getMe()
+                print("status: \(data.status)")
                 switch data.status {
                 case .waiting:
                     subject.send(.waiting)

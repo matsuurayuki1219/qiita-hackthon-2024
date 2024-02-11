@@ -54,7 +54,12 @@ class ExtraPraisingViewModel: ObservableObject {
 
                 extraUserMessages = praiseModel.comments.compactMap { comment in
                     let user = members.first { $0.id == comment.fromUserId}
-                    return MessageModel(message: comment.comment, user: user!)
+                    if user?.id == praisingUser?.id {
+                        return nil
+                    } else {
+                        return MessageModel(message: comment.comment, user: user!)
+                    }
+
                 }
             } catch {
                 print(error)
@@ -64,16 +69,18 @@ class ExtraPraisingViewModel: ObservableObject {
     }
     func postComment() {
         // call post comment api
-        guard let praiseId = praiseId else { return }
+        guard let praiseId = praiseId, let myUser = myUser else { return }
         Task {
             do {
                 try await praiseRepository.putPraise(praiseId: praiseId, comment: inputMessage)
-                prepare()
+//                prepare()
             } catch {
                 // do nothing
             }
         }
         // update extraUserMessages
+        let message = MessageModel(message: inputMessage, user: myUser)
+        extraUserMessages.append(message)
     }
 
     func postStamp(_ stamp: ReactionStamp) {
@@ -82,7 +89,7 @@ class ExtraPraisingViewModel: ObservableObject {
         Task {
             do {
                 try await praiseRepository.putStamp(praiseId: praiseId, stamp: stamp.rawValue)
-                prepare()
+//                prepare()
             } catch {
                 // do nothing
             }

@@ -257,9 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				D28CABF42B77B94100E33C18 /* PraisingViewController.swift */,
+				D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */,
 				D28CABE72B779D7C00E33C18 /* MemberListViewModel.swift */,
 				D28CABF82B77BB6400E33C18 /* MemberListViewController.swift */,
-				D28CABFA2B77BC2E00E33C18 /* PraisingViewModel.swift */,
 			);
 			path = Praising;
 			sourceTree = "<group>";

@@ -12,12 +12,7 @@ struct Stamp: Hashable {
     var count: Int
 }
 
-struct Coment: Hashable {
-    var comment = "jjfioasjesjfoaesfjejiaeojsjojsfoajsosofjsefofjsoefjas"
-    var userName = "Hikaru"
-    var userImageName = "cat"
-}
-
+@MainActor
 class PraisedViewModel: ObservableObject {
     let authRepository = AuthRepository()
     let userRepository = UserRepository()
@@ -58,16 +53,16 @@ class PraisedViewModel: ObservableObject {
                 }
 
                 extraUserMessages = praiseModel.comments.compactMap { comment in
-                    let user = members.first { $0.id == comment.fromUserId}
-                    return MessageModel(message: comment.comment, user: user!)
+                    let user = members.first { $0.id == comment.fromUserId }
+                    if user?.id == praisingUser?.id || user?.id == myUser?.id {
+                        return nil
+                    } else {
+                        return MessageModel(message: comment.comment, user: user!)
+                    }
                 }
             } catch {
                 print(error)
             }
         }
-    }
-
-    func navigateToPraising() {
-
     }
 }

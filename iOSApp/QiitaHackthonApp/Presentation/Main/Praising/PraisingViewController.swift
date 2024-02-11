@@ -218,6 +218,7 @@ private extension PraisingViewController {
                 self?.navigationController?.pushViewController(vc, animated: true)
             case .failure:
                 print("Failure!!")
+                self?.dismiss(animated: true)
             }
         }.store(in: &subscriptions)
 

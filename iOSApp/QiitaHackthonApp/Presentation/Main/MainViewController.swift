@@ -29,6 +29,13 @@ class MainViewController: UIViewController {
         addObserver()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        print(#function)
+        viewModel.prepare()
+    }
+
     private func addConstraint() {
         indicatorView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         indicatorView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -41,16 +48,28 @@ class MainViewController: UIViewController {
             switch action {
             case .waiting:
                 let vc = WaitingViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let nav = UINavigationController(rootViewController: vc).then { nav in
+                    nav.modalPresentationStyle = .fullScreen
+                }
+                self?.present(nav, animated: true)
             case .praised:
                 let vc = PraisedViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let nav = UINavigationController(rootViewController: vc).then { nav in
+                    nav.modalPresentationStyle = .fullScreen
+                }
+                self?.present(nav, animated: true)
             case .submitter:
                 let vc = PraisingViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let nav = UINavigationController(rootViewController: vc).then { nav in
+                    nav.modalPresentationStyle = .fullScreen
+                }
+                self?.present(nav, animated: true)
             case .others:
                 let vc = ExtraPraisingViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let nav = UINavigationController(rootViewController: vc).then { nav in
+                    nav.modalPresentationStyle = .fullScreen
+                }
+                self?.present(nav, animated: true)
             }
         }.store(in: &subscriptions)
 

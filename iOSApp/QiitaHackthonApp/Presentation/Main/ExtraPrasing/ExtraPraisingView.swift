@@ -27,7 +27,7 @@ struct ExtraPraisingView: View {
                     .offset(y: 130)
                 VStack(spacing: -15) {
                     HStack {
-                        AsyncImage(url: URL(string: viewModel.praisedUser?.profileImageUri ?? "")) { image in
+                        AsyncImage(url: URL(string: viewModel.praisingUser?.profileImageUri ?? "")) { image in
                             image.resizable()
                                 .scaledToFill()
                                 .frame(width: 60, height: 60)
@@ -42,7 +42,7 @@ struct ExtraPraisingView: View {
                                 .offset(x: 10, y: -10)
                         }
 
-                        AsyncImage(url: URL(string: viewModel.praisingUser?.profileImageUri ?? "")) { image in
+                        AsyncImage(url: URL(string: viewModel.praisedUser?.profileImageUri ?? "")) { image in
                             image.resizable()
                                 .scaledToFill()
                                 .frame(width: 60, height: 60)
