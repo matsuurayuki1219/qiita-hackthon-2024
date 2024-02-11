@@ -9,13 +9,12 @@ import Foundation
 
 enum PraiseAPI {
     
-    static func postPraise(toUserId: Int, title: String = "", description: String) async throws -> PraiseEntity {
+    static func postPraise(toUserId: Int, description: String) async throws -> PraiseEntity {
         let url = URL(string: "https://vocal-circle-387923.an.r.appspot.com/praise")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         var json = [String: Any]()
         json["to_user_id"] = toUserId
-        json["title"] = title
         json["description"] = description
         let jsonObject = try JSONSerialization.data(withJSONObject: json, options: [])
         request.httpBody = jsonObject

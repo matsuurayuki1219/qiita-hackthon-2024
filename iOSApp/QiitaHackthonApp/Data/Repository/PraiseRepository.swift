@@ -9,7 +9,7 @@ import Foundation
 
 class PraiseRepository {
 
-    func uploadPraise(toUserId: Int, title: String = "", description: String) async throws -> PraiseModel {
+    func uploadPraise(toUserId: Int, description: String) async throws -> PraiseModel {
         return try await PraiseAPI.postPraise(toUserId: toUserId, description: description).toModel()
     }
 

@@ -12,17 +12,20 @@ import SwiftUI
 class MemberListViewModel {
 
     @Published var isLoading = false
-
     @Published var members: [MemberModel] = []
 
-    let repository = UserRepository()
+    let userRepository = UserRepository()
+    let authRepository = AuthRepository()
 
     init() {
         Task {
             do {
                 isLoading = true
-                let response = try await repository.getMembers()
-                members = response
+                let response = try await userRepository.getMembers()
+                let me = try await authRepository.getMe()
+
+                members = response.filter { $0.id != me.id }
+
                 isLoading = false
             } catch {
                 isLoading = false
