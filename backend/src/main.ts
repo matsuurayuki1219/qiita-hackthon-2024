@@ -5,6 +5,7 @@ import {
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { ErrorsInterceptor } from './intercepter';
 
 const PORT = process.env.PORT || 3000;
 
@@ -24,6 +25,7 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, document);
 
   app.enableCors();
+  app.useGlobalInterceptors(new ErrorsInterceptor());
   await app.listen(PORT);
 }
 bootstrap();

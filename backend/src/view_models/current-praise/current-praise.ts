@@ -1,17 +1,16 @@
-import { Praise } from 'src/models/praise/praise';
 import { ApiProperty } from '@nestjs/swagger';
-import { User } from 'src/models/user/user';
 import { CountByStamp } from '../count-by-stamp/count-by-stamp';
-import { Comment } from 'src/models/comment/comment';
+import { Praise } from 'src/entities/Praise';
+import { User } from 'src/entities/User';
+import { CommentResponse } from '../comment-response/comment-response';
 
-export class CurrentPraise {
+export class CurrentPraiseResponse {
   constructor(praise: Praise) {
     this.id = praise.id;
-    this.title = praise.title;
     this.description = praise.description;
-    this.to_user_id = praise.to_user_id;
-    this.from_user_id = praise.from_user_id;
-    this.comments = praise.comments;
+    this.to_user_id = praise.toUser.id;
+    this.from_user_id = praise.fromUser.id;
+    this.comments = praise.comments.map(CommentResponse.fromEntity);
     this.stamps = praise.stamps.reduce((acc, stamp) => {
       const existStamp = acc.find((item) => item.stamp === stamp.stamp);
       if (existStamp != null) {
@@ -32,11 +31,6 @@ export class CurrentPraise {
     description: 'The unique identifier of the Praise',
   })
   id: number;
-  @ApiProperty({
-    example: '神がかった掃除でした',
-    description: '称賛する内容のタイトル',
-  })
-  title: string;
 
   @ApiProperty({
     example: 'とても綺麗に掃除してくれて感謝しています',
@@ -57,11 +51,11 @@ export class CurrentPraise {
   from_user_id: User['id'];
 
   @ApiProperty({
-    type: Comment,
+    type: CommentResponse,
     isArray: true,
     description: 'The comments of the Praise',
   })
-  comments: Comment[];
+  comments: CommentResponse[];
 
   @ApiProperty({
     type: CountByStamp,

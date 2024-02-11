@@ -5,7 +5,20 @@ Qiita hackthon 2024.
 ## Installation
 
 ```bash
-$ yarn install
+cp .env.example .env
+yarn install
+```
+
+### Setup CloudSQL Auth Proxy
+
+1. Download auth proxy from [document](https://cloud.google.com/sql/docs/postgres/connect-auth-proxy?hl=ja#install)
+1. Setup application default credential.
+```sh
+gcloud auth application-default login
+```
+1. Run proxy
+```sh
+./cloud-sql-proxy --port 5432 vocal-circle-387923:asia-northeast1:qiita-hackthon-2024
 ```
 
 ## Running the app
@@ -42,6 +55,7 @@ http://localhost:3000/swagger
 
 ### Deploy
 
+1. `cp .env.production .env`
 1. `yarn build`
 1. `gcloud app deploy`
 

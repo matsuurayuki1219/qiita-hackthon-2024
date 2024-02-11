@@ -18,15 +18,15 @@ import {
 } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/auth-guard/auth-guard.guard';
 import { PostPriseRequest } from 'src/request_models/post-praise-request/post-praise-request';
-import { Praise } from 'src/models/praise/praise';
 import { PrivateRequest } from 'src/request_models/private-request/private-request';
 import { PraiseService } from 'src/services/praise/praise.service';
 import { UserService } from 'src/services/user/user.service';
 import { PutComment } from 'src/request_models/put-comment/put-comment';
-import { Comment } from 'src/models/comment/comment';
-import { Stamp } from 'src/models/stamp/stamp';
 import { PutStamp } from 'src/request_models/put-stamp/put-stamp';
-import { CurrentPraise } from 'src/viwe_models/current-praise/current-praise';
+import { CurrentPraiseResponse } from 'src/view_models/current-praise/current-praise';
+import { PraiseResponse } from 'src/view_models/praise-response/praise-response';
+import { StampResponse } from 'src/view_models/stamp-response/stamp-response';
+import { CommentResponse } from 'src/view_models/comment-response/comment-response';
 
 @ApiBearerAuth()
 @ApiTags('praise')
@@ -40,27 +40,26 @@ export class PrisesController {
   @Post('/')
   @ApiCreatedResponse({
     description: 'The record has been successfully created.',
-    type: Praise,
+    type: PraiseResponse,
   })
   async postPraise(
     @Request() req: PrivateRequest,
     @Body() body: PostPriseRequest,
   ) {
-    const from_user_id = (req.user as any).sub;
+    const from_user_id = req.user.id;
     const praise = await this.priseService.postPraise({
-      title: body.title,
       description: body.description,
       from_user_id: from_user_id,
       to_user_id: body.to_user_id,
     });
     await this.userService.switchStatus(body.to_user_id);
-    return praise;
+    return PraiseResponse.fromEntity(praise);
   }
 
   @Get('/current_praise')
   @ApiOkResponse({
     description: 'The record has been successfully created.',
-    type: CurrentPraise,
+    type: CurrentPraiseResponse,
   })
   @ApiNotFoundResponse({
     description: 'Not found',
@@ -70,12 +69,12 @@ export class PrisesController {
     if (currentPraise == null) {
       throw new NotFoundException();
     }
-    return new CurrentPraise(currentPraise);
+    return new CurrentPraiseResponse(currentPraise);
   }
 
   @Put('/:praise_id/comment')
   @ApiCreatedResponse({
-    type: Comment,
+    type: CommentResponse,
   })
   @ApiNotFoundResponse()
   async putComment(
@@ -83,12 +82,8 @@ export class PrisesController {
     @Param('praise_id') praise_id: number,
     @Body() body: PutComment,
   ) {
-    const praise = await this.priseService.findById(Number(praise_id));
-    if (praise == null) {
-      throw new NotFoundException();
-    }
     const from_user_id = req.user.id;
-    return this.priseService.putComment(praise, {
+    return this.priseService.putComment(praise_id, {
       from_user_id: from_user_id,
       comment: body.comment,
     });
@@ -96,7 +91,7 @@ export class PrisesController {
 
   @Put('/:praise_id/stamp')
   @ApiCreatedResponse({
-    type: Stamp,
+    type: StampResponse,
   })
   @ApiNotFoundResponse()
   async putStamp(
@@ -104,14 +99,11 @@ export class PrisesController {
     @Param('praise_id') praise_id: number,
     @Body() body: PutStamp,
   ) {
-    const praise = await this.priseService.findById(Number(praise_id));
-    if (praise == null) {
-      throw new NotFoundException();
-    }
     const from_user_id = req.user.id;
-    return this.priseService.putStamp(praise, {
+    const stamp = await this.priseService.putStamp(praise_id, {
       from_user_id: from_user_id,
       stamp: body.stamp,
     });
+    return StampResponse.fromEntity(stamp);
   }
 }
